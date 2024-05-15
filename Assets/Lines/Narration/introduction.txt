@@ -1,11 +1,11 @@
-Welcome to the Age of Fragmentation, the Medieval Age of Ancient China,;欢迎来到魏晋南北朝时代;ようこそ、中国の魏晋南北朝の時代へ
-where legends and monsters roam the earth,;这是一个百鬼夜行的时代;これは伝説と怪物が地上を徘徊する時代
-and the aristocratic families shackle the world by their lust of immortality.;这是一个世家大族不顾一切追求长生的时代;これは貴族の家族が不老不死の欲望によって世界を束縛する時代です
-As the product of corrupted alchemy and twisted desire, here comes the Ulorpse.;豪族与名士对于登仙的渴望最终催生出了名为玉琉尸的存在;崩壊した錬丹術と歪んだ欲望の産物として、『玉琉尸（ギョクルのみこと）』が現れました
-Ulorpses, with their jadeized hearts,;这是一种筋脉都已玉化的存在;玉化したチャクラを持つ
-are beings of night, once mortal, now a twisted undead.;他们满足了长生的渴望但却成为了黑暗中的妖邪;『玉琉尸（ギョクルのみこと）』は、不死への欲求を満たす、今ではねじれたアンデッドとなりました
-Ulorpses thrive in the darkness, shunning the light of the sun,;玉琉尸畏惧阳光，只能在黑夜与阴雨中行动;夜の存在である、彼らは太陽の光を避け、暗闇の中で生き続けますが
-but their desires never ended, shifting from immortality to deity.;拥有了不死之身的他们开始觊觎神明之位;彼らの欲望は不死から神へと変わりました
-They are gathering power by absorbing others, both monsters and mortals.;他们吞噬其他怪物甚至人类以积蓄力量;化け物や人間を吸収することで力を蓄えています
-In this world, Ulorpses walk the thin line between mankind and myth.;在这个时代，玉琉尸本身就是人神魔三界的边界;この世界では、;『玉琉尸（ギョクルのみこと）』は人類と神と悪魔の狭間を歩きます
-They are both feared and revered, hunted yet haunting.;他们令人恐惧却又令人敬畏;恐れられ、尊敬され、狩られながらも彷徨います
+intro01
+intro02
+intro03
+intro04
+intro05
+intro06
+intro07
+intro08
+intro09
+intro10
+intro11
