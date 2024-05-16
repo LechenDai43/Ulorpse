@@ -1,0 +1,3 @@
+NewStart:New Game
+Load:Load Game
+Setting:Setting

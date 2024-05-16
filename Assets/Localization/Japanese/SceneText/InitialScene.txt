@@ -1,0 +1,3 @@
+NewStart:新しく
+Load:ロード
+Setting:設定

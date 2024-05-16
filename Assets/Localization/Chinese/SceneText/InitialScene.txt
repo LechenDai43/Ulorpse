@@ -1,0 +1,3 @@
+NewStart:新游戏
+Load:载入
+Setting:设置
