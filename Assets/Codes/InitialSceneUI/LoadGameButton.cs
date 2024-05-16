@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LoadGameButton : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,24 @@ public class LoadGameButton : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void LocaleUpdate()
+    {
+        if (GameManager.GetLocaleFlag())
+        {
+            switch (GameManager.GetLocale())
+            {
+                case Locales.Chinese:
+                    image.texture = chineseTexture;
+                    break;
+                case Locales.English:
+                    image.texture = englishTexture;
+                    break;
+                case Locales.Japanese:
+                    image.texture = japaneseTexture;
+                    break;
+            }
+        }
     }
 }

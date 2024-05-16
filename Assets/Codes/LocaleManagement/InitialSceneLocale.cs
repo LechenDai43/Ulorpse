@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InitialSceneLocale : MonoBehaviour
 {
+    public TextAsset textFile;
     // Start is called before the first frame update
     void Start()
     {
