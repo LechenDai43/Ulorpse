@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
 
     #region variables
     public Locales locale;
-    public bool localChangedFlag;
     #endregion
 
     #region getter and setter
@@ -23,23 +22,13 @@ public class GameManager : MonoBehaviour
 
     public static void SetLocale(Locales _locale)
     {
-        if (_locale != _instance.locale)
-        {
-            _instance.localChangedFlag = true;
-        }
         _instance.locale = _locale;
-    }
-
-    public static bool GetLocaleFlag()
-    {
-        return _instance.localChangedFlag;
     }
     #endregion
 
 
     void Awake()
     {
-        Debug.Log("GameManager Awake() called.");
         if (_instance == null)
         {
             _instance = this;
@@ -56,7 +45,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        _instance.localChangedFlag = false;
     }
 
     

@@ -18,20 +18,17 @@ public class Logo : MonoBehaviour
     // Update is called once per frame
     public void LocaleUpdate()
     {
-        if (GameManager.GetLocaleFlag())
+        switch (GameManager.GetLocale())
         {
-            switch(GameManager.GetLocale())
-            {
-                case Locales.Chinese:
-                    image.texture = chineseTexture;
-                    break;
-                case Locales.English:
-                    image.texture = englishTexture;
-                    break;
-                case Locales.Japanese:
-                    image.texture = japaneseTexture;
-                    break;
-            }
+            case Locales.Chinese:
+                image.texture = chineseTexture;
+                break;
+            case Locales.English:
+                image.texture = englishTexture;
+                break;
+            case Locales.Japanese:
+                image.texture = japaneseTexture;
+                break;
         }
     }
 }

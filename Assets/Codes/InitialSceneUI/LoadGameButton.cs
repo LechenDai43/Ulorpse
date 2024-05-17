@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
+using System;
 
 public class LoadGameButton : MonoBehaviour
 {
-    
+
     // Start is called before the first frame update
+    Text LoadGameLabel;
     void Start()
     {
-        
+        LoadGameLabel = gameObject.GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -17,22 +21,9 @@ public class LoadGameButton : MonoBehaviour
         
     }
 
-    public void LocaleUpdate()
+    public void LocaleUpdate(InitialSceneLocale locale)
     {
-        if (GameManager.GetLocaleFlag())
-        {
-            switch (GameManager.GetLocale())
-            {
-                case Locales.Chinese:
-                    image.texture = chineseTexture;
-                    break;
-                case Locales.English:
-                    image.texture = englishTexture;
-                    break;
-                case Locales.Japanese:
-                    image.texture = japaneseTexture;
-                    break;
-            }
-        }
+        string label = locale.GetLocaleWord("Load");
+        LoadGameLabel.text = label;
     }
 }

@@ -10,6 +10,10 @@ public class LocaleSelector : MonoBehaviour
     public Dropdown selector;
 
     public Logo logo;
+    public LoadGameButton loadGameButton;
+    public NewGameButton newGameButton;
+    public SettingButton settingButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +43,13 @@ public class LocaleSelector : MonoBehaviour
     // Update is called once per frame
     public void OnLocaleSelect()
     {
+        InitialSceneLocale locale = gameObject.GetComponent<InitialSceneLocale>();
         GameManager.SetLocale((Locales)selector.value);
         logo.LocaleUpdate();
-    }
+        loadGameButton.LocaleUpdate(locale);
+        newGameButton.LocaleUpdate(locale);
+        settingButton.LocaleUpdate(locale);
+}
 }
 
 public enum Locales
