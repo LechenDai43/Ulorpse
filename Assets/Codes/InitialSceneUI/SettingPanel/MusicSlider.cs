@@ -9,7 +9,7 @@ public class MusicSlider : MonoBehaviour
 {
     public Text Label, Number;
     public Dropdown InitialLocaleSelector;
-    public InitialAudio Audio;
+    public BackgroundAudio Audio;
 
     private Slider slider;
     // Start is called before the first frame update

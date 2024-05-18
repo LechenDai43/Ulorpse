@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Locales locale;
     public int soundVolume = 100;
     public int musicVolume = 100;
+    public bool musicInterruptedOnSceneChanging = false;
+    public float musicPausedAt = 0.0F;
     #endregion
 
     #region getter and setter
@@ -43,6 +45,24 @@ public class GameManager : MonoBehaviour
     {
         _instance.musicVolume = _volume;
     }
+
+    public static bool IsMusicInterruptedOnSceneChanging()
+    {
+        return _instance.musicInterruptedOnSceneChanging;
+    }
+    public static void SetMusicInterruptedOnSceneChanging(bool _volume)
+    {
+        _instance.musicInterruptedOnSceneChanging = _volume;
+    }
+
+    public static float GetMusicPausedAt()
+    {
+        return _instance.musicPausedAt;
+    }
+    public static void SetMusicPausedAt(float _volume)
+    {
+        _instance.musicPausedAt = _volume;
+    }
     #endregion
 
 
@@ -51,6 +71,7 @@ public class GameManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {

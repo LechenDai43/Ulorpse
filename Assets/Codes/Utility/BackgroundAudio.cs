@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
+using System;
 
-public class SoundEffectAudio : MonoBehaviour
+public class BackgroundAudio : MonoBehaviour
 {
     public AudioSource Source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +17,13 @@ public class SoundEffectAudio : MonoBehaviour
         // Check if GameManager instance is not null
         if (gameManager != null)
         {
-            Source.volume = GameManager.GetSoundVolume() / 100;
+            Source.volume = GameManager.GetMusicVolume() / 100;
+            if (GameManager.IsMusicInterruptedOnSceneChanging())
+            {
+                Source.time = GameManager.GetMusicPausedAt();
+                GameManager.SetMusicInterruptedOnSceneChanging(false);
+                GameManager.SetMusicPausedAt(0);
+            }
         }
         else
         {
@@ -24,16 +34,11 @@ public class SoundEffectAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateVolume(float volume)
     {
         Source.volume = volume;
-    }
-
-    public void Play()
-    {
-        Source.Play();
     }
 }
