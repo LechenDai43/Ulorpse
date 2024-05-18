@@ -9,6 +9,8 @@ public class SettingButton : MonoBehaviour
 {
     // Start is called before the first frame update
     Text LoadGameLabel;
+    public GameObject InitialPanel, SettingPanel;
+    public Dropdown InitialLocaleSelector;
     void Start()
     {
         LoadGameLabel = gameObject.GetComponentInChildren<Text>();
@@ -24,5 +26,18 @@ public class SettingButton : MonoBehaviour
     {
         string label = locale.GetLocaleWord("Setting");
         LoadGameLabel.text = label;
+    }
+
+    public void OnLaunchSetting()
+    {
+        SettingPanel.SetActive(true);
+        Selectable[] selectables = InitialPanel.GetComponentsInChildren<Selectable>();
+
+        // Disable interactability for each Selectable object
+        foreach (Selectable selectable in selectables)
+        {
+            selectable.interactable = false;
+        }
+        InitialLocaleSelector.interactable = false;
     }
 }

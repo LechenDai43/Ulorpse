@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     #region variables
     public Locales locale;
+    public int soundVolume = 100;
+    public int musicVolume = 100;
     #endregion
 
     #region getter and setter
@@ -19,10 +21,27 @@ public class GameManager : MonoBehaviour
     {
         return _instance.locale;
     }
-
     public static void SetLocale(Locales _locale)
     {
         _instance.locale = _locale;
+    }
+
+    public static int GetSoundVolume()
+    {
+        return _instance.soundVolume;
+    }
+    public static void SetSoundVolume(int _volume)
+    {
+        _instance.soundVolume = _volume;
+    }
+
+    public static int GetMusicVolume()
+    {
+        return _instance.musicVolume;
+    }
+    public static void SetMusicVolume(int _volume)
+    {
+        _instance.musicVolume = _volume;
     }
     #endregion
 

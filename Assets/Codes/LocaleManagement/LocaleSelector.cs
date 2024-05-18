@@ -13,6 +13,12 @@ public class LocaleSelector : MonoBehaviour
     public LoadGameButton loadGameButton;
     public NewGameButton newGameButton;
     public SettingButton settingButton;
+    public CloseSettingButton closeSettingButton;
+    public Dropdown InitialLocaleSelector;
+    public SettingTitle settingTitle;
+    public MusicSlider musicSlider;
+    public SoundSlider soundSlider;
+    public Text Label;
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +49,33 @@ public class LocaleSelector : MonoBehaviour
     // Update is called once per frame
     public void OnLocaleSelect()
     {
-        InitialSceneLocale locale = gameObject.GetComponent<InitialSceneLocale>();
+        InitialSceneLocale locale;
+        if (InitialLocaleSelector != null)
+        {
+            locale = InitialLocaleSelector.GetComponent<InitialSceneLocale>();
+            InitialLocaleSelector.value = selector.value;
+        }
+        else
+        {
+            locale = gameObject.GetComponent<InitialSceneLocale>();
+        }
         GameManager.SetLocale((Locales)selector.value);
         logo.LocaleUpdate();
         loadGameButton.LocaleUpdate(locale);
         newGameButton.LocaleUpdate(locale);
         settingButton.LocaleUpdate(locale);
-}
+        closeSettingButton.LocaleUpdate(locale);
+        settingTitle.LocaleUpdate(locale);
+        musicSlider.LocaleUpdate(locale);
+        soundSlider.LocaleUpdate(locale);
+        
+
+        if(Label != null)
+        {
+            string label = locale.GetLocaleWord("Language");
+            Label.text = label + ":";
+        }
+    }
 }
 
 public enum Locales

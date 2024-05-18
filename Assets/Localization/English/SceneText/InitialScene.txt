@@ -1,3 +1,8 @@
 NewStart:New Game
 Load:Load Game
 Setting:Setting
+SettingTitle:Game Setting
+Sound:Sound Effect
+Music:Music Valume
+Language:Language
+Back:Back
