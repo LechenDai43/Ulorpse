@@ -17,7 +17,7 @@ public class BackgroundAudio : MonoBehaviour
         // Check if GameManager instance is not null
         if (gameManager != null)
         {
-            Source.volume = GameManager.GetMusicVolume() / 100;
+            Source.volume = (float)GameManager.GetMusicVolume() / 100;
             if (GameManager.IsMusicInterruptedOnSceneChanging())
             {
                 Source.time = GameManager.GetMusicPausedAt();
