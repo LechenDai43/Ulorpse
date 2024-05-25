@@ -1,0 +1,15 @@
+Qingzhou:Azure
+Provincia|
+Xuzhou:Tranquil
+Provincia|
+Yanzhou:Indulge
+Provincia|
+Bingzhou:Syzygy
+Provincia|
+Jizhou:Prospect
+Provincia|
+Yuzhou:Venison
+Provincia|
+Yangzhou:Ascend
+Provincia|
+Taishan:Mount Tai|
