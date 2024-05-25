@@ -1,8 +1,8 @@
-NewStart:新游戏
-Load:载入
-Setting:设置
-SettingTitle:游戏设置
-Sound:音效
-Music:音乐
-Language:语言
-Back:返回
+NewStart:新游戏|
+Load:载入|
+Setting:设置|
+SettingTitle:游戏设置|
+Sound:音效|
+Music:音乐|
+Language:语言|
+Back:返回|

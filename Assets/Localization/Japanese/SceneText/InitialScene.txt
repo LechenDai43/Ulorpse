@@ -1,8 +1,8 @@
-NewStart:新しいゲーム
-Load:ロード
-Setting:設定
-SettingTitle:ゲーム設定
-Sound:効果音
-Music:音楽
-Language:言語
-Back:戻る
+NewStart:新しいゲーム|
+Load:ロード|
+Setting:設定|
+SettingTitle:ゲーム設定|
+Sound:効果音|
+Music:音楽|
+Language:言語|
+Back:戻る|

@@ -10,13 +10,14 @@ public class LocaleStringParser
         Dictionary<string, string> result = new Dictionary<string, string> ();
 
         string content = textAsset.text;
-        foreach (string line in content.Split('\n'))
+        foreach (string line in content.Split('|'))
         {
             if (!line.Contains(":"))
             {
                 continue;
             }
-            string[] parts = line.Split(':');
+            string newLine = line.Trim('\r').Trim('\n');
+            string[] parts = newLine.Split(':');
             result.Add(parts[0], parts[1]);
         }
 
