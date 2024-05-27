@@ -23,5 +23,15 @@ public class LocaleStringParser
 
         return result;
     }
+
+    public static List<string> LoadLocalVariableNames(TextAsset textAsset) {
+        List<string> result = new List<string>();
+        string variableContent = textAsset.text;
+        foreach (string line in variableContent.Split('\n'))
+        {
+            result.Add(line.Trim('\r'));
+        }
+        return result;
+    }
 }
 

@@ -10,7 +10,7 @@ public class IntroductionManagement : MonoBehaviour
     public TextAsset IntroductionLineFileCN, IntroductionLineFileEN, IntroductionLineFileJP;
     public Dictionary<string, string> IntroductionLines;
     public TextAsset LineVariable;
-    public List<string> LineVariableList = new List<string>();
+    public List<string> LineVariableList;
     public GameObject FirstPane, SecondPane;
 
     public Text[] LinesText = new Text[11];
@@ -39,11 +39,7 @@ public class IntroductionManagement : MonoBehaviour
             line.gameObject.SetActive(false);
         }
 
-        string lineVariableContent = LineVariable.text;
-        foreach (string line in lineVariableContent.Split('\n'))
-        {
-            LineVariableList.Add(line.Trim('\r'));
-        }
+        LineVariableList = LocaleStringParser.LoadLocalVariableNames(LineVariable);
 
         StartCoroutine(ShowLines());
     }
