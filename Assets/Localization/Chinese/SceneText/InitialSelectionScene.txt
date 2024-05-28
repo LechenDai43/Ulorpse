@@ -5,3 +5,6 @@ ConfirmButton:确认|
 FirstName:名字|
 LastName:姓氏|
 GenderConfirm:你是一位{%gender%}，是这样吗？|
+House1:华|
+House2:萧|
+House3:谢|

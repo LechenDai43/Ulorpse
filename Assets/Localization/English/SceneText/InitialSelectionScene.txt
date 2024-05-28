@@ -5,3 +5,6 @@ ConfirmButton:Confirm|
 FirstName:First Name|
 LastName:Family Name|
 GenderConfirm:You are a {%gender%}, correct?|
+House1:Hua|
+House2:Xiao|
+House3:Xie|

@@ -14,6 +14,8 @@ public class InitialSelectionManager : MonoBehaviour
     public Dictionary<string, string> SelectionLines;
     public TextAsset LineVariable;
     public List<string> LineVariableList = new List<string>();
+    public TextAsset SelectionSceneTextFileCN, SelectionSceneTextFileEN, SelectionSceneTextFileJP;
+    public Dictionary<string, string> SelectionSceneTexts;
 
     public Image MapImage;
     public Text[] Lables;
@@ -30,19 +32,22 @@ public class InitialSelectionManager : MonoBehaviour
             case Locales.Chinese:
                 MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileCN);
                 SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileCN);
+                SelectionSceneTexts = LocaleStringParser.ParseLocaleFromTextAsset(SelectionSceneTextFileCN);
                 break;
             case Locales.English:
                 MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileEN);
                 SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileEN);
+                SelectionSceneTexts = LocaleStringParser.ParseLocaleFromTextAsset(SelectionSceneTextFileEN);
                 break;
             case Locales.Japanese:
                 MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileJP);
                 SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileJP);
+                SelectionSceneTexts = LocaleStringParser.ParseLocaleFromTextAsset(SelectionSceneTextFileJP);
                 break;
         }
         
-        LineVariableList = LocaleStringParser.LoadLocalVariableNames(LineVariable);
-
+       LineVariableList = LocaleStringParser.LoadLocalVariableNames(LineVariable);
+       ContinueButton.gameObject.GetComponentInChildren<Text>().text = SelectionSceneTexts["ContinueButton"];
        PositionLables();
        PopulateDialogue(0);
     }

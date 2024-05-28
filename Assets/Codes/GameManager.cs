@@ -85,6 +85,33 @@ public class GameManager : MonoBehaviour
     {
         _instance.Character.Gender = _gender;
     }
+    
+    public static string GetFirstName()
+    {
+        return _instance.Character.FirstName;
+    }
+    public static void SetFirstName(string _name)
+    {
+        _instance.Character.FirstName = _name;
+    }
+    
+    public static string GetLastName()
+    {
+        return _instance.Character.LastName;
+    }
+    public static void SetLastName(string _name)
+    {
+        _instance.Character.LastName = _name;
+    }
+    
+    public static Sprite GetCharacterPortrait()
+    {
+        return _instance.Character.CharacterPortrait;
+    }
+    public static void SetCharacterPortrait(Sprite _sprite)
+    {
+        _instance.Character.CharacterPortrait = _sprite;
+    }
     #endregion
 
     void Awake()

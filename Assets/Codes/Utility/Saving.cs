@@ -8,6 +8,7 @@ public class Saving
     public Genders Gender;
     public string FirstName, LastName;
     public int Level;
+    public Sprite CharacterPortrait;
 }
 
 public enum Genders

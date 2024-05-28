@@ -5,3 +5,6 @@ ConfirmButton:確認|
 FirstName:名前|
 LastName:苗字|
 GenderConfirm:{%gender%}なのですか？|
+House1:華|
+House2:蕭|
+House3:謝|
