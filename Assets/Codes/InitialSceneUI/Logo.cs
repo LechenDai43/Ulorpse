@@ -8,7 +8,7 @@ using System;
 public class Logo : MonoBehaviour
 {
     public RawImage image;
-    public Texture chineseTexture, englishTexture, japaneseTexture;
+    public Texture chineseTexture, englishTexture, japaneseTexture, chichewaTexture;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,9 @@ public class Logo : MonoBehaviour
                 break;
             case Locales.Japanese:
                 image.texture = japaneseTexture;
+                break;
+            case Locales.Chichewa:
+                image.texture = chichewaTexture;
                 break;
         }
     }

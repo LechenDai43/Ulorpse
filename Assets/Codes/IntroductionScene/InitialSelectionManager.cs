@@ -8,13 +8,13 @@ using System;
 public class InitialSelectionManager : MonoBehaviour
 {
     
-    public TextAsset MapLabelFileCN, MapLabelFileEN, MapLabelFileJP;
+    public TextAsset MapLabelFileCN, MapLabelFileEN, MapLabelFileJP, MapLabelFileNY;
     public Dictionary<string, string> MapLabels;
-    public TextAsset SelectionLinesFileCN, SelectionLinesFileEN, SelectionLinesFileJP;
+    public TextAsset SelectionLinesFileCN, SelectionLinesFileEN, SelectionLinesFileJP, SelectionLinesFileNY;
     public Dictionary<string, string> SelectionLines;
     public TextAsset LineVariable;
     public List<string> LineVariableList = new List<string>();
-    public TextAsset SelectionSceneTextFileCN, SelectionSceneTextFileEN, SelectionSceneTextFileJP;
+    public TextAsset SelectionSceneTextFileCN, SelectionSceneTextFileEN, SelectionSceneTextFileJP, SelectionSceneTextFileNY;
     public Dictionary<string, string> SelectionSceneTexts;
 
     public Image MapImage;
@@ -43,6 +43,11 @@ public class InitialSelectionManager : MonoBehaviour
                 MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileJP);
                 SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileJP);
                 SelectionSceneTexts = LocaleStringParser.ParseLocaleFromTextAsset(SelectionSceneTextFileJP);
+                break;
+            case Locales.Chichewa:
+                MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileNY);
+                SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileNY);
+                SelectionSceneTexts = LocaleStringParser.ParseLocaleFromTextAsset(SelectionSceneTextFileNY);
                 break;
         }
         

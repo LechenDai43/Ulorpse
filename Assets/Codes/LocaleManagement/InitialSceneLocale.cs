@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class InitialSceneLocale : MonoBehaviour
 {
-    public TextAsset textChineseFile, textEnglishFile, textJapaneseFile;
-    public Dictionary<string, string> chineseLocale, englishLocale, japaneseLocale;
+    public TextAsset textChineseFile, textEnglishFile, textJapaneseFile, textChichewaFile;
+    public Dictionary<string, string> chineseLocale, englishLocale, japaneseLocale, chichewaLocale;
     // Start is called before the first frame update
     void Start()
     {
         chineseLocale = LocaleStringParser.ParseLocaleFromTextAsset(textChineseFile);
         englishLocale = LocaleStringParser.ParseLocaleFromTextAsset(textEnglishFile);
         japaneseLocale = LocaleStringParser.ParseLocaleFromTextAsset(textJapaneseFile);
+        chichewaLocale = LocaleStringParser.ParseLocaleFromTextAsset(textChichewaFile);
     }
 
     public string GetLocaleWord(string key)
@@ -24,6 +25,8 @@ public class InitialSceneLocale : MonoBehaviour
                 return englishLocale[key];
             case Locales.Japanese:
                 return japaneseLocale[key];
+            case Locales.Chichewa:
+                return chichewaLocale[key];
         }
         return key;
     }

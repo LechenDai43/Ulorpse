@@ -2440,6 +2440,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ccbe5e2f034f143929fb00e272c081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Character:
+    Province: 0
+    Gender: 0
+    FirstName: 
+    LastName: 
+    Level: 0
+    _FileName: 
+    CharacterPortrait: {fileID: 0}
   locale: 1
   soundVolume: 100
   musicVolume: 10
@@ -3251,14 +3259,17 @@ MonoBehaviour:
   MapLabelFileCN: {fileID: 4900000, guid: 32fedef3646526d4599ea1df9083ddef, type: 3}
   MapLabelFileEN: {fileID: 4900000, guid: b534f30abb56f914d8e4325779fb38d2, type: 3}
   MapLabelFileJP: {fileID: 4900000, guid: 40affd3461683d64190ce9bf99a49c0b, type: 3}
+  MapLabelFileNY: {fileID: 4900000, guid: 14b339b9c32538541accfb8e585cedad, type: 3}
   SelectionLinesFileCN: {fileID: 4900000, guid: 0521f83360b7e3a43b7caf42ce75ca11, type: 3}
   SelectionLinesFileEN: {fileID: 4900000, guid: 46a96dd0c3a08284391f09578fcb860d, type: 3}
   SelectionLinesFileJP: {fileID: 4900000, guid: 4b041e90da5256f49979a558e8c5fc94, type: 3}
+  SelectionLinesFileNY: {fileID: 4900000, guid: 2c7eb60b3102d944c96357aaab2a51b4, type: 3}
   LineVariable: {fileID: 4900000, guid: 2d9a05944c920154ead66bb639bee876, type: 3}
   LineVariableList: []
   SelectionSceneTextFileCN: {fileID: 4900000, guid: 91b037a2a086e654585cbc33edca15ab, type: 3}
   SelectionSceneTextFileEN: {fileID: 4900000, guid: cd37498bb315fee41816ab139e4a64de, type: 3}
   SelectionSceneTextFileJP: {fileID: 4900000, guid: d05f2d263cc3a6e42a837834369999d7, type: 3}
+  SelectionSceneTextFileNY: {fileID: 4900000, guid: da440dd38c9e20143b7377ea65066365, type: 3}
   MapImage: {fileID: 1916072017}
   Lables:
   - {fileID: 1177205565}
@@ -3467,6 +3478,7 @@ MonoBehaviour:
   IntroductionLineFileCN: {fileID: 4900000, guid: a59ae046cdddce8428bf8cf01fc71aac, type: 3}
   IntroductionLineFileEN: {fileID: 4900000, guid: 292c39c865b231b4da3525d12d3a3a84, type: 3}
   IntroductionLineFileJP: {fileID: 4900000, guid: 8af7ccf724ffbcd4d9969ad9c591e015, type: 3}
+  IntroductionLineFileNY: {fileID: 4900000, guid: 562cfa70b9b0f4f45b13d6084580832b, type: 3}
   LineVariable: {fileID: 4900000, guid: b253c639d45229943a95b1221d17d9f7, type: 3}
   LineVariableList: []
   FirstPane: {fileID: 1404143812}

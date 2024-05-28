@@ -1,0 +1,9 @@
+Select01: Unali mwana wa mabanja olemera|
+Select02: Ukufuna kupeza moyo wosatha kudzera mu ukadaulo wa kupanga mankhwala|
+Select03: Koma unamwalira chifukwa cha ngozi|
+Select11: Pamene udzuka kachiwiri|
+Select12: Unapeza kuti wasanduka mwalachuma wosafa|
+Select13: Ndipo moyo wako wachiwiri wayamba kuchokera pano|
+Select4: Choyamba, chonde sankhani malo omwe mumakhala|
+Select5: Kodi munali mnyamata kapena mtsikana?|
+Select6: Chonde ndiuzeni dzina lanu|

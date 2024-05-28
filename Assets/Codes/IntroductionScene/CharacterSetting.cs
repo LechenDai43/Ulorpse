@@ -22,6 +22,7 @@ public class CharacterSetting : MonoBehaviour
         FemalePortrait.sprite = Sprites[(offset - 1) * 2 + 1];
         FemalePortrait.SetNativeSize();
         ConfirmButton.interactable = false;
+        ConfirmButton.gameObject.GetComponentInChildren<Text>().text = ISM.SelectionSceneTexts["ConfirmButton"];
         Prompt.text = ISM.SelectionLines["Select5"];
 
         

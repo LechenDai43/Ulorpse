@@ -13,7 +13,7 @@ public class SoundEffectAudio : MonoBehaviour
         // Check if GameManager instance is not null
         if (gameManager != null)
         {
-            Source.volume = GameManager.GetSoundVolume() / 100;
+            Source.volume = GameManager.GetSoundVolume() / 100.0F;
         }
         else
         {

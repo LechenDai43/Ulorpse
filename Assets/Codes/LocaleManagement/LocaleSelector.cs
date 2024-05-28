@@ -82,5 +82,6 @@ public enum Locales
 {
     Chinese,
     English,
-    Japanese
+    Japanese,
+    Chichewa
 }

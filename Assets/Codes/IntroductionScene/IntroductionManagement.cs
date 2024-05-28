@@ -7,7 +7,7 @@ using System;
 
 public class IntroductionManagement : MonoBehaviour
 {
-    public TextAsset IntroductionLineFileCN, IntroductionLineFileEN, IntroductionLineFileJP;
+    public TextAsset IntroductionLineFileCN, IntroductionLineFileEN, IntroductionLineFileJP, IntroductionLineFileNY;
     public Dictionary<string, string> IntroductionLines;
     public TextAsset LineVariable;
     public List<string> LineVariableList;
@@ -31,6 +31,9 @@ public class IntroductionManagement : MonoBehaviour
                 break;
             case Locales.Japanese:
                 IntroductionLines = LocaleStringParser.ParseLocaleFromTextAsset(IntroductionLineFileJP);
+                break;
+            case Locales.Chichewa:
+                IntroductionLines = LocaleStringParser.ParseLocaleFromTextAsset(IntroductionLineFileNY);
                 break;
         }
         foreach (Text line in LinesText)

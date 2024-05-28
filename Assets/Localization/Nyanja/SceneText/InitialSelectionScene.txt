@@ -1,0 +1,10 @@
+ContinueButton:Pitirizani|
+Prince:Mnyamata♂|
+Princess:Mtsikana♀|
+ConfirmButton:Tsimikizani|
+FirstName:Dzina Loyamba|
+LastName:Dzina la Banja|
+GenderConfirm:Kodi ndinu {%gender%}, sichoncho？|
+House1:Hua|
+House2:Xiao|
+House3:Xie|
