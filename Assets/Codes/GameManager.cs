@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
         get { return _instance; }
     }
 
+    public Saving Character;
+
     #region variables
     public Locales locale;
     public int soundVolume = 100;
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         if (_instance == null)
         {
+            Character = new Saving();
             _instance = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -87,5 +90,7 @@ public class GameManager : MonoBehaviour
     {
     }
 
-    
+    public static void CreateNewSaving () {
+        _instance.Character = new Saving();
+    }
 }

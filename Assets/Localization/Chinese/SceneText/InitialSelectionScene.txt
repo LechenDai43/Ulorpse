@@ -1,0 +1,7 @@
+ContinueButton:继续|
+Prince:少爷♂|
+Princess:小姐♀|
+ConfirmButton:确认|
+FirstName:名字|
+LastName:姓氏|
+GenderConfirm:你是一位{%gender%}，是这样吗？|

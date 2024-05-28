@@ -1,0 +1,9 @@
+Select01:You were a member of a grand noble house,|
+Select02:wanting to obtain eternal life by alchemy.|
+Select03:However, you dead from an accident.|
+Select11:When you wake up now,|
+Select12:you find yourself becoming an Ulorpse.|
+Select13:Your second life starts here.|
+Select4:First, please pick your residence place.|
+Select5:Are you a prince or a princess?|
+Select6:What is your name?|

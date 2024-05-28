@@ -1,0 +1,7 @@
+ContinueButton:Continue|
+Prince:Prince♂|
+Princess:Princess♀|
+ConfirmButton:Confirm|
+FirstName:First Name|
+LastName:Family Name|
+GenderConfirm:You are a {%gender%}, correct?|

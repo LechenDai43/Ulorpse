@@ -1,0 +1,7 @@
+ContinueButton:続く|
+Prince:若旦那♂|
+Princess:お嬢様♀|
+ConfirmButton:確認|
+FirstName:名前|
+LastName:苗字|
+GenderConfirm:{%gender%}なのですか？|

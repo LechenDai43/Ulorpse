@@ -19,6 +19,9 @@ public class InitialSelectionManager : MonoBehaviour
     public Text[] Lables;
     public float[] xRatio, yRatio;
     public string[] LabelVariables;
+
+    public Text[] DialogueTexts;
+    public Button ContinueButton, QingButton, XuButton, YanButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +29,22 @@ public class InitialSelectionManager : MonoBehaviour
        {
             case Locales.Chinese:
                 MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileCN);
+                SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileCN);
                 break;
             case Locales.English:
                 MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileEN);
+                SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileEN);
                 break;
             case Locales.Japanese:
                 MapLabels = LocaleStringParser.ParseLocaleFromTextAsset(MapLabelFileJP);
+                SelectionLines = LocaleStringParser.ParseLocaleFromTextAsset(SelectionLinesFileJP);
                 break;
         }
+        
+        LineVariableList = LocaleStringParser.LoadLocalVariableNames(LineVariable);
+
        PositionLables();
+       PopulateDialogue(0);
     }
 
     // Update is called once per frame
@@ -54,5 +64,44 @@ public class InitialSelectionManager : MonoBehaviour
             label.rectTransform.anchoredPosition = new Vector2(widthL, heightL);
             label.text = MapLabels[LabelVariables[i]];
         }
+    }
+
+    private void PopulateDialogue(int _start) {
+        for (int i = 0; i < 3; i++) {
+            string variableName = LineVariableList[i + _start];
+            string textContent = SelectionLines[variableName];
+            DialogueTexts[i].text = textContent;
+        }
+    }
+
+    private bool _nextDialogue;
+    public void NextButtonFunction() {
+        if (!_nextDialogue){
+            PopulateDialogue(3);
+            _nextDialogue = true;
+        }
+        else {
+            ContinueButton.gameObject.SetActive(false);
+
+            QingButton.gameObject.SetActive(true);
+            QingButton.gameObject.GetComponentInChildren<Text>().text = MapLabels[LabelVariables[0]];
+
+            XuButton.gameObject.SetActive(true);
+            XuButton.gameObject.GetComponentInChildren<Text>().text = MapLabels[LabelVariables[1]];
+
+            YanButton.gameObject.SetActive(true);
+            YanButton.gameObject.GetComponentInChildren<Text>().text = MapLabels[LabelVariables[2]];
+            
+            for (int i = 0; i < 3; i++) {
+                DialogueTexts[i].text = "";
+            }
+            string variableName = LineVariableList[6];
+            string textContent = SelectionLines[variableName];
+            DialogueTexts[0].text = textContent;
+        }
+    }
+
+    public void ProvinceSelection() {
+
     }
 }
