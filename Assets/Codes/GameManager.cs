@@ -76,6 +76,15 @@ public class GameManager : MonoBehaviour
     {
         _instance.Character.Province = _province;
     }
+    
+    public static Genders GetGender()
+    {
+        return _instance.Character.Gender;
+    }
+    public static void SetGender(Genders _gender)
+    {
+        _instance.Character.Gender = _gender;
+    }
     #endregion
 
     void Awake()
