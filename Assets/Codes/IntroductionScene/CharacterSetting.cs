@@ -111,6 +111,7 @@ public class CharacterSetting : MonoBehaviour
         else {
             GameManager.SetFirstName(FirstName.text);
             GameManager.SetLastName(LastName.text);
+            GameManager.Save();
         }
     }
 

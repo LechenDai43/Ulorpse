@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -138,5 +139,38 @@ public class GameManager : MonoBehaviour
 
     public static void CreateNewSaving () {
         _instance.Character = new Saving();
+    }
+
+    public static void Save() {
+        string SaveFilePath;
+        if (_instance.Character._FileName != null) {
+            SaveFilePath = Path.Combine(Application.persistentDataPath, "SaveFolder", _instance.Character._FileName);
+        }
+        else if (_instance.Character.LastName != null || _instance.Character.FirstName != null){
+            string FileName = _instance.Character.LastName + _instance.Character.FirstName;
+            if (!Directory.Exists(Path.Combine(Application.persistentDataPath, "SaveFolder"))){
+                Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "SaveFolder"));
+            }
+            string[] files = Directory.GetFiles(Path.Combine(Application.persistentDataPath, "SaveFolder"));
+            bool duplicated = false;
+            int count = 0;
+            do {
+                duplicated = false;
+                foreach (string file in files) {
+                    if (file.EndsWith(FileName + (count == 0? "": count) + ".json")) {
+                        duplicated = true;
+                        count += 1;
+                    }
+                }
+            }
+            while (duplicated);
+            SaveFilePath = Path.Combine(Application.persistentDataPath, "SaveFolder", FileName + (count == 0? "": count) + ".json");
+            _instance.Character._FileName = FileName + (count == 0? "": count) + ".json";
+        }
+        else {
+            return;
+        }
+        string JsonData = JsonUtility.ToJson(_instance.Character);
+        File.WriteAllText(SaveFilePath, JsonData);
     }
 }
