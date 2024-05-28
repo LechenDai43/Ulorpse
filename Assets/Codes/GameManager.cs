@@ -67,6 +67,16 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Getter and Setter for Saving
+    public static Provinces GetProvince()
+    {
+        return _instance.Character.Province;
+    }
+    public static void SetProvince(Provinces _province)
+    {
+        _instance.Character.Province = _province;
+    }
+    #endregion
 
     void Awake()
     {

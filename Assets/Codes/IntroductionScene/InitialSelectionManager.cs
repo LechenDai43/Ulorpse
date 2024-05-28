@@ -101,7 +101,10 @@ public class InitialSelectionManager : MonoBehaviour
         }
     }
 
-    public void ProvinceSelection() {
-
+    public GameObject ProvinceSelectionPanel, GenderAndNameSettingPanel;
+    public void ProvinceSelection(int _P) {
+        GameManager.SetProvince((Provinces)_P);
+        ProvinceSelectionPanel.SetActive(false);
+        GenderAndNameSettingPanel.SetActive(true);
     }
 }

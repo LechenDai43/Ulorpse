@@ -12,13 +12,13 @@ public class Saving
 
 public enum Genders
 {
-    Male,
-    Female
+    Male = 1,
+    Female = 2,
 }
 
 public enum Provinces
 {
-    Azure,
-    Tranquil,
-    Indulge
+    Azure = 1,
+    Tranquil = 2,
+    Indulge = 3,
 }

@@ -621,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &376042112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2084,6 +2084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1091044158}
+  - component: {fileID: 1091044159}
   m_Layer: 5
   m_Name: GenderAndName
   m_TagString: Untagged
@@ -2113,6 +2114,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1091044159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091044157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ea0229b08465c4792e7d8a3cf8924e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 21300000, guid: 2d2b15d20e8b2494a9852e6043887a49, type: 3}
+  - {fileID: 21300000, guid: 80ac7607eaf5f194c93f9f7c21c63060, type: 3}
+  - {fileID: 21300000, guid: 2fe2323c090076a438480929923d55d9, type: 3}
+  - {fileID: 21300000, guid: a631cacf26b7d524f94e3eef6a156b95, type: 3}
+  - {fileID: 21300000, guid: e46d35d6f83bfa846b52b7ef6b5fb534, type: 3}
+  - {fileID: 21300000, guid: 1ddcbaad17a4df4458a61f5de5a595a7, type: 3}
+  MalePortrait: {fileID: 1059451941}
+  FemalePortrait: {fileID: 809680104}
 --- !u!1 &1100923050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,9 +2243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ccbe5e2f034f143929fb00e272c081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locale: 1
+  locale: 0
   soundVolume: 50
-  musicVolume: 50
+  musicVolume: 10
   musicInterruptedOnSceneChanging: 0
   musicPausedAt: 0
 --- !u!4 &1157509710
@@ -3058,6 +3080,8 @@ MonoBehaviour:
   QingButton: {fileID: 1768671012}
   XuButton: {fileID: 2084762932}
   YanButton: {fileID: 1644695579}
+  ProvinceSelectionPanel: {fileID: 376042111}
+  GenderAndNameSettingPanel: {fileID: 1091044157}
 --- !u!1 &1404143812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,7 +3935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1644695580}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373787152}
+        m_TargetAssemblyTypeName: InitialSelectionManager, Assembly-CSharp
+        m_MethodName: ProvinceSelection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1644695580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4190,7 +4226,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1768671013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373787152}
+        m_TargetAssemblyTypeName: InitialSelectionManager, Assembly-CSharp
+        m_MethodName: ProvinceSelection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1768671013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4325,7 +4373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1850478107
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4484,7 +4532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1871844622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5559,7 +5607,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2084762933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373787152}
+        m_TargetAssemblyTypeName: InitialSelectionManager, Assembly-CSharp
+        m_MethodName: ProvinceSelection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2084762933
 MonoBehaviour:
   m_ObjectHideFlags: 0
