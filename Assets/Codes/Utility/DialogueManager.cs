@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 using System;
+using UnityEngine.Audio;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class DialogueManager : MonoBehaviour
         audioFinished = false;
 
         currentFocus.PreDialogueFunction();
-        StartCoroutine(ShowLines());
+        StartCoroutine(TypeText());
 
         return true;
     }
