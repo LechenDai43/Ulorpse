@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        VoicePlayer.volume = GameManager.GetMusicVolume() / 100.0F;
     }
 
     // Update is called once per frame
@@ -30,11 +30,11 @@ public class DialogueManager : MonoBehaviour
         Content = _content;
     }
 
-    public bool NextLine() {
+    public void ContinueToNextLine() {
         currentContent = "";
         currentFocus = null;
         if (Content.Count == 0) {
-            return false;
+            return;
         }
 
         currentFocus = Content.Dequeue();
@@ -46,36 +46,54 @@ public class DialogueManager : MonoBehaviour
         ContentText.text = "";
         dialogueFinished = false;
         dialogueSkipped = false;
-        audioFinished = false;
 
+        VoicePlayer.resource = currentFocus.Resource;
+        VoicePlayer.Play();
         currentFocus.PreDialogueFunction();
+        ContinueButton.interactable = false;
         StartCoroutine(TypeText());
-
-        return true;
+        StartCoroutine(AudioCheck());
     }
 
     
     private bool dialogueFinished = false;
     private bool dialogueSkipped = false;
-    private bool audioFinished = false;
     IEnumerator TypeText()
     {
         foreach (char c in currentContent)
         {
             ContentText.text += c;
 
-            if (dialogueSkipped) {   
+            if (dialogueSkipped) {  
+                ContentText.text = currentContent;
                 yield break;
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.02f);
         }
         
         dialogueFinished = true;
+        if (!VoicePlayer.isPlaying) {
+            Debug.Log(VoicePlayer.isPlaying);
+            ContinueButton.interactable = true;
+
+        }
         currentFocus.PostDialogueFunction();
+    }
+
+    IEnumerator AudioCheck() {
+        while (VoicePlayer.isPlaying) {
+            yield return null;
+        }
+
+        if (dialogueFinished || dialogueSkipped) {
+            ContinueButton.interactable = true;
+        }
     }
 
     public void SkipDialogueLine() {
         dialogueSkipped = true;
+        VoicePlayer.Stop();
+        ContinueButton.interactable = true;
     }
 }
 
