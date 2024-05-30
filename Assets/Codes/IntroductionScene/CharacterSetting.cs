@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CharacterSetting : MonoBehaviour
 {
@@ -113,6 +114,7 @@ public class CharacterSetting : MonoBehaviour
             GameManager.SetFirstName(FirstName.text);
             GameManager.SetLastName(LastName.text);
             GameManager.Save();
+            SceneManager.LoadScene("TutorialScene");
         }
     }
 

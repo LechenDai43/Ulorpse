@@ -1,0 +1,40 @@
+Line01:{%name%}→Kodi... ndili kuti?|
+Line02:Narrator→Pamene mukudzuka, mupeza kuti muli m'chipinda chamdima ndi chamadzi.|
+Line03:{%name%}→Apa... apa ndi manda a banja? Ndipo pali chinthu cholakwika ndi... 
+ndi thupi langa?|
+Line04:{%name%}→Ndabwezeretsedwa? ... 
+Ayi, sindingathe kumva kugunda kwa mtima wanga...|
+Line05:{%name%}→Ndakhala Miwalachuma? Mphekesera za Miwalachuma ndi... zenizeni?!|
+Line06:{%name%}→Eh? Ndi chiyani ichi?|
+Line07:Narrator→Mukupeza mankhwala osadziwika.|
+Line08:Narrator→Miwalachuma imatha kuphatikiza zilombo zina kudzera m'thupi lawo. 
+Chilombo chophatikizidwa chidzakhala mankhwala.|
+Line09:Narrator→Monga Miwalachuma, mutha kugwiritsa ntchito mphamvu zomwe zili 
+mu mankhwala.|
+Line10:{%name%}→Oh, ndazindikira. Ndakhala Miwalachuma. Izi zikutanthauza kuti 
+thupi langa linaphatikiza chilombo chokha ndisanadzuke.|
+Line11:Narrator→Mutenga mankhwala awa. Mankhwala anu onse adzaikidwa mu botolo 
+lanu la gourdi.|
+Special01:Narrator→Tsopano, chonde dinani chizindikiro cha gourdi kumanzere kumanja 
+kuti muwone mankhwala anu.|
+Special02:Narrator→Tsopano, muli ndi mankhwala amodzi. Dinani kuti muwone zotsatira zake.|
+Special03:Narrator→Chonde tsekani gulu.|
+Special04:Narrator→Mutha kugwiritsa ntchito mankhwala anu kuti mupeze mphamvu zapadera. 
+Tsopano, chonde dinani chizindikiro cha thupi kumanzere kumanja 
+kuti mugwiritse ntchito mankhwala anu.|
+Line12:Narrator→Pali mitundu isanu ya mankhwala, yogwirizana ndi zinthu zisanu: 
+chitsulo, mtengo, madzi, moto, ndi nthaka.|
+Line13:Narrator→Mitundu yosiyanasiyana ya mankhwala iyenera kuikidwa pa chakras 
+zosiyanasiyana m'thupi lanu. Mutha kugwiritsa ntchito elixir 
+imodzi yokha ya chinthu chilichonse nthawi imodzi.|
+Line14:Narrator→Mankhwala si osagwiritsidwa ntchito, koma sangathe kusinthidwa. 
+Choncho, mukakhala ndi mankhwala amphamvu kwambiri, 
+musaiwale kusintha mankhwala akale.|
+Special05:Narrator→Tsopano, chonde dinani slot yopanda kanthu ya chinthu chofananira 
+cha mankhwala anu, ndikugwiritsa ntchito mankhwala anu.|
+Special06:Narrator→Chonde tsekani gulu ili.|
+Line15:……→Fuu, fuu.|
+Line16:{%name%}→Ndi chiyani chimenecho? Osandinyenga, ndipo dzionetseni!|
+Line17:Mycocrab→Sgarr! Gaha! Hiss~ hiss~~|
+Line18:{%name%}→Simungathe kulankhula? Chabwino, ndipha chilombo ichi.|
+Line19:Narrator→Tsopano, yesani kumenya nkhondo yanu yoyamba monga Miwalachuma!|

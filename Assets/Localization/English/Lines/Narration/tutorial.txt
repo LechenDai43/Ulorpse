@@ -1,0 +1,38 @@
+Line01:{%name%}→Where... where am I?|
+Line02:Narrator→As you wake up, you find yourself in a dark and moist room.|
+Line03:{%name%}→Here... here is the family tomb? 
+And there is something wrong with... with my body?|
+Line04:{%name%}→I resurrected?... No, I cannot feel my heart beat...|
+Line05:{%name%}→I became an Ulorpse? The rumors about Ulorpse are... real?!|
+Line06:{%name%}→Eh? What is this?|
+Line07:Narrator→You find an unknown elixir.|
+Line08:Narrator→Ulorpse can assimilate other monsters through their flesh. 
+The assimilated monster will turn into an elixir.|
+Line09:Narrator→As an Ulorpse, you can use the power within the elixirs.|
+Line10:{%name%}→Oh, I see. I became an Ulorpse. This means my body had 
+automatically assimilated a monster before I woke up.|
+Line11:Narrator→You take this elixir. 
+All the elixirs of yours will be put in your gourd bottle.|
+Special01:Narrator→Now, please click the gourd icon 
+on the top right corner to check your elixir.|
+Special02:Narrator→Now, you possess one elixir. Click it to check its effect.|
+Special03:Narrator→Please close the panel.|
+Special04:Narrator→You can use your elixirs to gain special powers. 
+Now, please click the body icon on the top right corner 
+to use your elixir.|
+Line12:Narrator→There are five types of elixirs, corresponding to the five elements: 
+metal element, wood element, water element, 
+fire element, and earth element.|
+Line13:Narrator→Different types of elixirs should be put at different chakras 
+in your body. You can only use one elixir of each element at a time.|
+Line14:Narrator→Elixirs are not expendable, but they cannot be improved. 
+Thus, once you get more powerful elixirs, do not forget to replace 
+the older elixirs.|
+Special05:Narrator→Now, please click the empty slot of the corresponding element 
+of your elixir, and use your elixir.|
+Special06:Narrator→Please close this panel.|
+Line15:……→Whoosh, whoosh.|
+Line16:{%name%}→What's that? Don't attempt to fool me, and show yourself!|
+Line17:Mycocrab→Sgarr! Gaha! Hiss~ hiss~~|
+Line18:{%name%}→Cannot communicate? Fine, I'm going to eliminate this monster.|
+Line19:Narrator→Now, try to fight your first battle as an Ulorpse!|
