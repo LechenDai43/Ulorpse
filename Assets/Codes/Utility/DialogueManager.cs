@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        VoicePlayer.volume = GameManager.GetMusicVolume() / 100.0F;
+        VoicePlayer.volume = GameManager.GetDialogueVolume() / 100.0F;
     }
 
     // Update is called once per frame

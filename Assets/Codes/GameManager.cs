@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Locales locale;
     public int soundVolume = 100;
     public int musicVolume = 100;
+    public int dialogueVolume = 100;
     public bool musicInterruptedOnSceneChanging = false;
     public float musicPausedAt = 0.0F;
     #endregion
@@ -38,6 +39,15 @@ public class GameManager : MonoBehaviour
     public static void SetSoundVolume(int _volume)
     {
         _instance.soundVolume = _volume;
+    }
+
+    public static int GetDialogueVolume()
+    {
+        return _instance.dialogueVolume;
+    }
+    public static void SetDialogueVolume(int _volume)
+    {
+        _instance.dialogueVolume = _volume;
     }
 
     public static int GetMusicVolume()

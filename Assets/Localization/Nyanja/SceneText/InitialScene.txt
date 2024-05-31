@@ -4,5 +4,6 @@ Setting:Zikhazikiko|
 SettingTitle:Zikhazikiko za Masewera|
 Sound:Phokoso|
 Music:Nyimbo|
+Dialogue:Zokambirana|
 Language:Chilankhulo|
 Back:Bwererani|

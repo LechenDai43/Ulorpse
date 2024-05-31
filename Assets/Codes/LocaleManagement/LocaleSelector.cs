@@ -18,6 +18,7 @@ public class LocaleSelector : MonoBehaviour
     public SettingTitle settingTitle;
     public MusicSlider musicSlider;
     public SoundSlider soundSlider;
+    public DialogueSlider dialogueSlider;
     public Text Label;
 
     // Start is called before the first frame update
@@ -68,6 +69,7 @@ public class LocaleSelector : MonoBehaviour
         settingTitle.LocaleUpdate(locale);
         musicSlider.LocaleUpdate(locale);
         soundSlider.LocaleUpdate(locale);
+        dialogueSlider.LocaleUpdate(locale);
         
 
         if(Label != null)

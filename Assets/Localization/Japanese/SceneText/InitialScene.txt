@@ -4,5 +4,6 @@ Setting:設定|
 SettingTitle:ゲーム設定|
 Sound:効果音|
 Music:音楽|
+Dialogue:会話音|
 Language:言語|
 Back:戻る|
