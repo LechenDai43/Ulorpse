@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
                 Character.FirstName = "Tianshuo";
                 Character.Gender = Genders.Male;
                 Character.Province = Provinces.Tranquil;
+                Character.CharacterPortrait = player;
             #endif
         }
         else

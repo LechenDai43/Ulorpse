@@ -17,6 +17,8 @@ public class TutorialManager : MonoBehaviour
     public List<AudioResource> FemaleDubResources;
     private List<AudioResource> DubResources;
     public DialogueManager TutorialDialogueManager;
+    public Image Player, Exilir, Opponent;
+    public Sprite[] Exilirs, Opponents;
 
     private int _dialoguePointer = 0;
     // Start is called before the first frame update
@@ -38,11 +40,41 @@ public class TutorialManager : MonoBehaviour
                 break;
         }
 
+        Player.sprite = GameManager.GetCharacterPortrait();
+
         if (GameManager.GetGender() == Genders.Male) {
             DubResources = MaleDubResources;
+            switch (GameManager.GetProvince()) {
+                case Provinces.Azure:
+                    Exilir.sprite = Exilirs[4];
+                    Opponent.sprite = Opponents[2];
+                    break;
+                case Provinces.Tranquil:
+                    Exilir.sprite = Exilirs[3];
+                    Opponent.sprite = Opponents[0];
+                    break;
+                case Provinces.Indulge:
+                    Exilir.sprite = Exilirs[0];
+                    Opponent.sprite = Opponents[1];
+                    break;
+            }
         }
         else {
             DubResources = FemaleDubResources;
+            switch (GameManager.GetProvince()) {
+                case Provinces.Azure:
+                    Exilir.sprite = Exilirs[2];
+                    Opponent.sprite = Opponents[3];
+                    break;
+                case Provinces.Tranquil:
+                    Exilir.sprite = Exilirs[4];
+                    Opponent.sprite = Opponents[2];
+                    break;
+                case Provinces.Indulge:
+                    Exilir.sprite = Exilirs[1];
+                    Opponent.sprite = Opponents[4];
+                    break;
+            }
         }
 
         LineVariableList = LocaleStringParser.LoadLocalVariableNames(LineVariable);
@@ -68,11 +100,11 @@ public class TutorialManager : MonoBehaviour
 
             string content = TutorialLines[variable].Replace("{%name%}", GameManager.GetFirstName());
             entity.DialogueContent = content;
-            if (variable.Contains("Special")) {
-                entity.PreDialogueFunction = NormalPreDialogue;
+            if (variable.Contains("Line07")) {
+                entity.PreDialogueFunction = Line07PreDialogueFunction;
             }
             else {
-                entity.PreDialogueFunction = SpecialPreDialogue;
+                entity.PreDialogueFunction = NormalPreDialogue;
             }
             entity.PostDialogueFunction = NormalPostDialogue;
             entity.Resource = DubResources[pointer];
@@ -84,13 +116,17 @@ public class TutorialManager : MonoBehaviour
 
     private void NormalPostDialogue() {
         _dialoguePointer++;
+        TutorialDialogueManager.ContinueToNextLine();
     }
 
     private void NormalPreDialogue() {
 
     }
 
-    private void SpecialPreDialogue() {
+    private void Line07PreDialogueFunction() {
         NormalPreDialogue();
+
+        Player.gameObject.SetActive(false);
+        Exilir.gameObject.SetActive(true);
     }
 }

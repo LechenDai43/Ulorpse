@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
                 ContentText.text = currentContent;
                 yield break;
             }
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.05f);
         }
         
         dialogueFinished = true;
@@ -77,7 +77,6 @@ public class DialogueManager : MonoBehaviour
             ContinueButton.interactable = true;
 
         }
-        currentFocus.PostDialogueFunction();
     }
 
     IEnumerator AudioCheck() {
@@ -94,6 +93,10 @@ public class DialogueManager : MonoBehaviour
         dialogueSkipped = true;
         VoicePlayer.Stop();
         ContinueButton.interactable = true;
+    }
+
+    public void ContinueButtonClick() {    
+        currentFocus.PostDialogueFunction();
     }
 }
 
