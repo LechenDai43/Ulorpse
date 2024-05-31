@@ -125,6 +125,9 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Pseudo Character
+    public Sprite player;
+    #endregion
     void Awake()
     {
         if (_instance == null)
@@ -132,6 +135,14 @@ public class GameManager : MonoBehaviour
             Character = new Saving();
             _instance = this;
             DontDestroyOnLoad(gameObject);
+
+            #if UNITY_EDITOR
+                this.Character = new Saving();
+                Character.LastName = "Tao";
+                Character.FirstName = "Tianshuo";
+                Character.Gender = Genders.Male;
+                Character.Province = Provinces.Tranquil;
+            #endif
         }
         else
         {
