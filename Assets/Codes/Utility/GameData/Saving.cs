@@ -13,6 +13,8 @@ public class Saving
     public string FirstName, LastName;
     [SerializeField]
     public int Level;
+    [SerializeField]
+    public Exilir[] Exilirs;
     
     [SerializeField]
     public string _FileName;
