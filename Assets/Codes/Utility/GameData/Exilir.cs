@@ -99,7 +99,7 @@ public class EnhanceExilir: Exilir
 
 [System.Serializable]
 public enum Elements {
-	Mental = 1,
+	Metal = 1,
 	Wood = 2,
 	Water = 3,
 	Fire = 4,

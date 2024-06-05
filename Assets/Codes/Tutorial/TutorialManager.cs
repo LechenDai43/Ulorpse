@@ -128,5 +128,39 @@ public class TutorialManager : MonoBehaviour
 
         Player.gameObject.SetActive(false);
         Exilir.gameObject.SetActive(true);
+
+        // Create the initial Exilir
+        Exilir exilir = new Exilir();
+        if (GameManager.GetGender() == Genders.Male) {
+            switch(GameManager.GetProvince()) {
+                case Provinces.Azure:
+                    exilir.Element = Elements.Earth;
+                    break;
+                case Provinces.Tranquil:
+                    exilir.Element = Elements.Fire;
+                    break;
+                case Provinces.Indulge:
+                    exilir.Element = Elements.Metal;
+                    break;
+            }
+        }
+        else {
+            switch(GameManager.GetProvince()) {
+                case Provinces.Azure:
+                    exilir.Element = Elements.Water;
+                    break;
+                case Provinces.Tranquil:
+                    exilir.Element = Elements.Earth;
+                    break;
+                case Provinces.Indulge:
+                    exilir.Element = Elements.Wood;
+                    break;
+            }
+        }
+        exilir.Rarity = Rarities.Rare;
+        exilir.Name = "An Exilir";
+        exilir.Level = 5;
+        exilir.StatType = StatTypes.Attack;
+        exilir.AdjustType = StatAdjustTypes.Value;
     }
 }
