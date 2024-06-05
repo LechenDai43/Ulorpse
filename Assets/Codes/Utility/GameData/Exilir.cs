@@ -160,3 +160,23 @@ public enum EnhanceSkills {
 	DecreaseDefense,
 	Nullification
 }
+
+public class ExilirComparer: IComparer 
+{
+	int IComparer.Compare(object x, object y) {
+		if (x.GetType() != typeof(Exilir) || y.GetType() != typeof(Exilir)) {
+			return 0;
+		}
+
+		Exilir exilirX = (Exilir)x, exilirY = (Exilir)y;
+		if (exilirX.Level != exilirY.Level) {
+			return exilirY.Level - exilirX.Level;
+		}
+		if (exilirX.Rarity == exilirY.Rarity) {			
+			return (int)exilirX.Element - (int)exilirY.Element;
+		}
+		else {
+			return (int)exilirY.Rarity - (int)exilirX.Rarity;
+		}
+	}
+}

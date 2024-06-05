@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: ffd5e25014ba71b4c91a0afd2515e25b
+guid: ab05d56a7e11f1e4b92072fcac1916a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -262108834630032882
-    second: metal_0
+      213: -8326712265333833893
+    second: legendary_0
   - first:
-      213: -328307220334348384
-    second: metal_1
+      213: -7539295142465989727
+    second: legendary_1
   - first:
-      213: 4127356660199939472
-    second: metal_2
+      213: 7437852084044539696
+    second: legendary_2
+  - first:
+      213: 674930582216937816
+    second: legendary_3
+  - first:
+      213: 4618812837302528698
+    second: legendary_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -53,7 +59,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -119,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: metal_0
+      name: legendary_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 78
-        width: 843
-        height: 863
+        x: 7
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e02a263576dcc5cf0800000000000000
-      internalID: -262108834630032882
+      spriteID: b5f73edbf43917c80800000000000000
+      internalID: -8326712265333833893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: metal_1
+      name: legendary_1
       rect:
         serializedVersion: 2
-        x: 481
-        y: 91
-        width: 14
-        height: 6
+        x: 86
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a776c2925e917bf0800000000000000
-      internalID: -328307220334348384
+      spriteID: 1a39c78430b0f5790800000000000000
+      internalID: -7539295142465989727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: metal_2
+      name: legendary_2
       rect:
         serializedVersion: 2
-        x: 566
-        y: 88
-        width: 13
-        height: 6
+        x: 165
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +181,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09d5f88c301574930800000000000000
-      internalID: 4127356660199939472
+      spriteID: 037af51201f883760800000000000000
+      internalID: 7437852084044539696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: legendary_3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 8
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8519611e9c5dd5900800000000000000
+      internalID: 674930582216937816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: legendary_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 8
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba6e63ddc1591040800000000000000
+      internalID: 4618812837302528698
       vertices: []
       indices: 
       edges: []
@@ -192,9 +240,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      metal_0: -262108834630032882
-      metal_1: -328307220334348384
-      metal_2: 4127356660199939472
+      legendary_0: -8326712265333833893
+      legendary_1: -7539295142465989727
+      legendary_2: 7437852084044539696
+      legendary_3: 674930582216937816
+      legendary_4: 4618812837302528698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

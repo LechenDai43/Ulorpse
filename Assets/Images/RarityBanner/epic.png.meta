@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: ffd5e25014ba71b4c91a0afd2515e25b
+guid: ad77c89c62531d74d8b5b73cd159f1e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -262108834630032882
-    second: metal_0
+      213: -5381781119884701127
+    second: epic_0
   - first:
-      213: -328307220334348384
-    second: metal_1
+      213: -31597617968604531
+    second: epic_1
   - first:
-      213: 4127356660199939472
-    second: metal_2
+      213: 7480276410729969430
+    second: epic_2
+  - first:
+      213: -6812237362023283960
+    second: epic_3
+  - first:
+      213: 4231155980293868682
+    second: epic_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: metal_0
+      name: epic_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 78
-        width: 843
-        height: 863
+        x: 7
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e02a263576dcc5cf0800000000000000
-      internalID: -262108834630032882
+      spriteID: 9325e5ad5921055b0800000000000000
+      internalID: -5381781119884701127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: metal_1
+      name: epic_1
       rect:
         serializedVersion: 2
-        x: 481
-        y: 91
-        width: 14
-        height: 6
+        x: 86
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a776c2925e917bf0800000000000000
-      internalID: -328307220334348384
+      spriteID: d8a9b35422ebf8ff0800000000000000
+      internalID: -31597617968604531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: metal_2
+      name: epic_2
       rect:
         serializedVersion: 2
-        x: 566
-        y: 88
-        width: 13
-        height: 6
+        x: 165
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +181,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09d5f88c301574930800000000000000
-      internalID: 4127356660199939472
+      spriteID: 6173b4b63c74fc760800000000000000
+      internalID: 7480276410729969430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: epic_3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 8
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80345f646321671a0800000000000000
+      internalID: -6812237362023283960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: epic_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 8
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c8faa42f518ba30800000000000000
+      internalID: 4231155980293868682
       vertices: []
       indices: 
       edges: []
@@ -192,9 +240,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      metal_0: -262108834630032882
-      metal_1: -328307220334348384
-      metal_2: 4127356660199939472
+      epic_0: -5381781119884701127
+      epic_1: -31597617968604531
+      epic_2: 7480276410729969430
+      epic_3: -6812237362023283960
+      epic_4: 4231155980293868682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

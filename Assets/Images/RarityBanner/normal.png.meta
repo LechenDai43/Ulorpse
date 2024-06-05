@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: ffd5e25014ba71b4c91a0afd2515e25b
+guid: 69ca8a0c5a6f120408537bdf282c4bf4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -262108834630032882
-    second: metal_0
+      213: 4606157284126940538
+    second: normal_0
   - first:
-      213: -328307220334348384
-    second: metal_1
+      213: 8379811097228679920
+    second: normal_1
   - first:
-      213: 4127356660199939472
-    second: metal_2
+      213: -1027844146932346525
+    second: normal_2
+  - first:
+      213: 2127367895402720061
+    second: normal_3
+  - first:
+      213: -1062606925861943016
+    second: normal_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: metal_0
+      name: normal_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 78
-        width: 843
-        height: 863
+        x: 7
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e02a263576dcc5cf0800000000000000
-      internalID: -262108834630032882
+      spriteID: a7dd6fb35ab5cef30800000000000000
+      internalID: 4606157284126940538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: metal_1
+      name: normal_1
       rect:
         serializedVersion: 2
-        x: 481
-        y: 91
-        width: 14
-        height: 6
+        x: 86
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a776c2925e917bf0800000000000000
-      internalID: -328307220334348384
+      spriteID: 0fa11377bc11b4470800000000000000
+      internalID: 8379811097228679920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: metal_2
+      name: normal_2
       rect:
         serializedVersion: 2
-        x: 566
-        y: 88
-        width: 13
-        height: 6
+        x: 165
+        y: 8
+        width: 70
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +181,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09d5f88c301574930800000000000000
-      internalID: 4127356660199939472
+      spriteID: 36112a1b13d5cb1f0800000000000000
+      internalID: -1027844146932346525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal_3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 8
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3bac0064dde58d10800000000000000
+      internalID: 2127367895402720061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normal_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 8
+        width: 70
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819012081acd041f0800000000000000
+      internalID: -1062606925861943016
       vertices: []
       indices: 
       edges: []
@@ -192,9 +240,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      metal_0: -262108834630032882
-      metal_1: -328307220334348384
-      metal_2: 4127356660199939472
+      normal_0: 4606157284126940538
+      normal_1: 8379811097228679920
+      normal_2: -1027844146932346525
+      normal_3: 2127367895402720061
+      normal_4: -1062606925861943016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

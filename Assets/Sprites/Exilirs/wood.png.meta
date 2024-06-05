@@ -109,7 +109,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -640,14 +640,36 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wood_0: 7440981132975211316
+      wood_1: 702437253302840433
+      wood_10: -5466660236000519826
+      wood_11: 1965428945439046568
+      wood_12: -3877661373632062614
+      wood_13: -1790659768063690878
+      wood_14: -384987876586962599
+      wood_15: 8386912431753553608
+      wood_16: -303402477891588025
+      wood_17: 2039631348193106430
+      wood_18: 8972754057075939319
+      wood_19: 4050515688947985240
+      wood_2: 797441582534902653
+      wood_20: -3669456710820571888
+      wood_21: 7233360319571779672
+      wood_3: 3875477477091452742
+      wood_4: -963520183335125280
+      wood_5: 6584622035073048824
+      wood_6: 3707907779626945283
+      wood_7: -4775105912554834093
+      wood_8: -3452568815047796567
+      wood_9: -401134088923802936
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

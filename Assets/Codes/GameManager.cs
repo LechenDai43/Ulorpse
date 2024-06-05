@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
+using UnityEditor;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -122,6 +125,14 @@ public class GameManager : MonoBehaviour
     public static void SetCharacterPortrait(Sprite _sprite)
     {
         _instance.Character.CharacterPortrait = _sprite;
+    }
+
+    public static Exilir[] GetExilirs() {
+        return _instance.Character.Exilirs;
+    }
+    public void AddExilir(Exilir _exilir) {
+        Array.Resize(ref _instance.Character.Exilirs, _instance.Character.Exilirs.Length + 1);
+        _instance.Character.Exilirs[_instance.Character.Exilirs.Length - 1] = _exilir;
     }
     #endregion
 
