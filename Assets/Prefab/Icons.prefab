@@ -199,7 +199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 727956634727757911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3051496604750940280}
+        m_TargetAssemblyTypeName: IconManager, Assembly-CSharp
+        m_MethodName: ClickGourdButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2479304559673727240
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1353766771116462054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3051496604750940280}
+        m_TargetAssemblyTypeName: IconManager, Assembly-CSharp
+        m_MethodName: ClickBodyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7671717945045431411
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7491660216577811250}
+  - component: {fileID: 3051496604750940280}
   m_Layer: 5
   m_Name: Icons
   m_TagString: Untagged
@@ -437,3 +462,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3051496604750940280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671717945045431411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a528e7185e27849b65781ed9b3db79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GuordButton: {fileID: 6456627537319385011}
+  BodyButton: {fileID: 2864055804777132631}
+  ExilirListPanelPrefab: {fileID: 5731596134370712337, guid: 586484fc20abeb34ab6b1409a06a238c, type: 3}
+  MainPanel: {fileID: 0}

@@ -19,6 +19,8 @@ public class TutorialManager : MonoBehaviour
     public DialogueManager TutorialDialogueManager;
     public Image Player, Exilir, Opponent;
     public Sprite[] Exilirs, Opponents;
+    public Button GourdButton, BodyButton;
+    public GameObject MultiPurposePanel, Barrier;
 
     private int _dialoguePointer = 0;
     // Start is called before the first frame update
@@ -81,6 +83,8 @@ public class TutorialManager : MonoBehaviour
         PrepareDialogueQueue();
         TutorialDialogueManager.SetContent(DialogueQueue);
         TutorialDialogueManager.ContinueToNextLine();
+        GourdButton.interactable = false;
+        BodyButton.interactable = false;
         
     }
 
@@ -103,10 +107,25 @@ public class TutorialManager : MonoBehaviour
             if (variable.Contains("Line07")) {
                 entity.PreDialogueFunction = Line07PreDialogueFunction;
             }
+            else if (variable.Contains("Special02")) {
+                entity.PreDialogueFunction = Special02PreDialogueFunction;
+            }
             else {
                 entity.PreDialogueFunction = NormalPreDialogue;
             }
-            entity.PostDialogueFunction = NormalPostDialogue;
+
+            if (variable.Contains("Special01")) {
+                entity.PostDialogueFunction = Special01PostDialogueFunction;
+            }
+            else if (variable.Contains("Special02")) {
+                entity.PostDialogueFunction = Special02PostDialogueFunction;
+            }
+            else if (variable.Contains("Special03")) {
+                entity.PostDialogueFunction = Special03PostDialogueFunction;
+            }
+            else {
+                entity.PostDialogueFunction = NormalPostDialogue;
+            }
             entity.Resource = DubResources[pointer];
 
             DialogueQueue.Enqueue(entity);
@@ -115,6 +134,7 @@ public class TutorialManager : MonoBehaviour
     }
 
     private void NormalPostDialogue() {
+        Debug.Log(_dialoguePointer);
         _dialoguePointer++;
         TutorialDialogueManager.ContinueToNextLine();
     }
@@ -125,9 +145,6 @@ public class TutorialManager : MonoBehaviour
 
     private void Line07PreDialogueFunction() {
         NormalPreDialogue();
-
-        Player.gameObject.SetActive(false);
-        Exilir.gameObject.SetActive(true);
 
         // Create the initial Exilir
         Exilir exilir = new Exilir();
@@ -162,5 +179,66 @@ public class TutorialManager : MonoBehaviour
         exilir.Level = 5;
         exilir.StatType = StatTypes.Attack;
         exilir.AdjustType = StatAdjustTypes.Value;
+
+        GameManager.AddExilir(exilir);        
+
+        Player.gameObject.SetActive(false);
+        Exilir.gameObject.SetActive(true);
+    }
+
+    private void Special02PreDialogueFunction() {
+        NormalPreDialogue();
+        Barrier.SetActive(true);
+    }
+
+    private void Special01PostDialogueFunction() {
+        _dialoguePointer++;
+        TutorialDialogueManager.ContinueButton.interactable = false;
+        GourdButton.interactable = true;
+        Debug.Log(_dialoguePointer);
+    }
+
+    private void Special02PostDialogueFunction() {
+        _dialoguePointer++;
+        TutorialDialogueManager.ContinueButton.interactable = false;
+        
+        ExilirListEntity[] Entities = MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().Entities;
+        foreach(ExilirListEntity entity in Entities) {
+            Button button = entity.gameObject.GetComponentInChildren<Button>();
+            button.interactable = true;
+            button.onClick.AddListener(OpenExilirEntityToMoveOn);
+        }
+        Debug.Log(_dialoguePointer);
+        Barrier.SetActive(false);
+    }
+
+    private void Special03PostDialogueFunction() {
+        _dialoguePointer++;
+        TutorialDialogueManager.ContinueButton.interactable = false;
+        Debug.Log(_dialoguePointer);
+        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = true;
+        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.onClick.AddListener(CloseExilirPanelToMoveOn);
+    }
+
+    public void OpenGourdToMoveOn() {
+        if (_dialoguePointer == 12) {
+            TutorialDialogueManager.ContinueToNextLine();
+        }
+    }
+
+    public void OpenExilirEntityToMoveOn() {
+        if (_dialoguePointer == 13) {
+            TutorialDialogueManager.ContinueToNextLine();
+        }
+        Barrier.SetActive(false);
+        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = false;
+    }
+    
+    public void CloseExilirPanelToMoveOn() {
+        if (_dialoguePointer == 14) {
+            TutorialDialogueManager.ContinueToNextLine();
+        }
+        GourdButton.interactable = false;
+        BodyButton.interactable = false;
     }
 }

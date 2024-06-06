@@ -15,9 +15,11 @@ public class ExilirPanelManager : MonoBehaviour
     public Image Enlargement, Banner, Element;
     public Text Name, Description;
     public Sprite[] Elements;
+    public Button CloseButton;
+    public IconManager IconManager;
 
     private Exilir[] Exilirs;
-    private ExilirListEntity[] Entities;
+    public ExilirListEntity[] Entities;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class ExilirPanelManager : MonoBehaviour
             entity.Exilir = Exilirs[i];
             entity.IndexInList = i;
             entity.ListManager = this;
+            entity.PopulateImage();
             Entities[i] = entity;
         }
         
@@ -53,5 +56,10 @@ public class ExilirPanelManager : MonoBehaviour
             int elementIndex = (int)entity.Exilir.Element - 1;
             Element.sprite = Elements[elementIndex];
         }
+    }
+
+    public void CloseButtonClicked() {
+        IconManager.OpenedPanelIsClosing();
+        Destroy(gameObject);
     }
 }

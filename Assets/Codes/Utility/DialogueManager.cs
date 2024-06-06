@@ -73,7 +73,6 @@ public class DialogueManager : MonoBehaviour
         
         dialogueFinished = true;
         if (!VoicePlayer.isPlaying) {
-            Debug.Log(VoicePlayer.isPlaying);
             ContinueButton.interactable = true;
 
         }

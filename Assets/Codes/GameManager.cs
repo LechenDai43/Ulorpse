@@ -130,9 +130,10 @@ public class GameManager : MonoBehaviour
     public static Exilir[] GetExilirs() {
         return _instance.Character.Exilirs;
     }
-    public void AddExilir(Exilir _exilir) {
-        Array.Resize(ref _instance.Character.Exilirs, _instance.Character.Exilirs.Length + 1);
-        _instance.Character.Exilirs[_instance.Character.Exilirs.Length - 1] = _exilir;
+    public static void AddExilir(Exilir _exilir) {
+        int newLength = _instance.Character.Exilirs == null? 1: _instance.Character.Exilirs.Length + 1;
+        Array.Resize(ref _instance.Character.Exilirs, newLength);
+        _instance.Character.Exilirs[newLength - 1] = _exilir;
     }
     #endregion
 
@@ -154,6 +155,7 @@ public class GameManager : MonoBehaviour
                 Character.Gender = Genders.Male;
                 Character.Province = Provinces.Tranquil;
                 Character.CharacterPortrait = player;
+                Character.Exilirs = new Exilir[0];
             #endif
         }
         else
