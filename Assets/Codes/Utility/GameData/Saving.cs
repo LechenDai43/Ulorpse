@@ -15,9 +15,13 @@ public class Saving
     public int Level;
     [SerializeField]
     public Exilir[] Exilirs;
+    [SerializeField]
+    public int MetalExilirID, WoodExilirID, WaterExilirID, FireExilirID, EarthExilirID;
     
     [SerializeField]
     public string _FileName;
+    [SerializeField]
+    public int _ExilirCounting;
 
     public Sprite CharacterPortrait;
 }

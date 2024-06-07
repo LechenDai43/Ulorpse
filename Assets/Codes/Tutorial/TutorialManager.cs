@@ -179,6 +179,7 @@ public class TutorialManager : MonoBehaviour
         exilir.Level = 5;
         exilir.StatType = StatTypes.Attack;
         exilir.AdjustType = StatAdjustTypes.Value;
+        exilir.ID = 0;
 
         GameManager.AddExilir(exilir);        
 

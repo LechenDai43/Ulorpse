@@ -6,7 +6,7 @@ using UnityEditor;
 using System;
 using UnityEngine.Audio;
 
-public class ExilirPanelManager : MonoBehaviour
+public class ExilirPanelManager : MonoBehaviour, IExilirEntityList
 {
 
     public ScrollRect ExilirListScrollView;
@@ -25,7 +25,6 @@ public class ExilirPanelManager : MonoBehaviour
     {
         content = ExilirListScrollView.content;
         Exilirs = GameManager.GetExilirs();
-        Array.Sort(Exilirs, new ExilirComparer());
         Entities = new ExilirListEntity[Exilirs.Length];
 
         for (int i = 0; i < Exilirs.Length; i++) {

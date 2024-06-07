@@ -128,12 +128,72 @@ public class GameManager : MonoBehaviour
     }
 
     public static Exilir[] GetExilirs() {
+        Array.Sort(_instance.Character.Exilirs, new ExilirComparer());
         return _instance.Character.Exilirs;
     }
     public static void AddExilir(Exilir _exilir) {
         int newLength = _instance.Character.Exilirs == null? 1: _instance.Character.Exilirs.Length + 1;
         Array.Resize(ref _instance.Character.Exilirs, newLength);
         _instance.Character.Exilirs[newLength - 1] = _exilir;
+    }
+
+    public static bool IsExilirEquipped(Exilir _exilir, Elements _element) {
+        if (_exilir.Element == _element) {
+            if (_exilir.ID == _instance.Character.MetalExilirID) {
+                return true;
+            }
+            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+                return true;
+            }
+            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+                return true;
+            }
+            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+                return true;
+            }
+            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+                return true;
+            }
+            return false;
+        }
+        else {
+            if (_exilir.Element != Elements.Normal) {
+                return false;
+            }
+            switch (_element) {
+                case Elements.Metal:
+                    return _exilir.ID == _instance.Character.MetalExilirID;
+                case Elements.Wood:
+                    return _exilir.ID == _instance.Character.WoodExilirID;
+                case Elements.Water:
+                    return _exilir.ID == _instance.Character.WaterExilirID;
+                case Elements.Fire:
+                    return _exilir.ID == _instance.Character.FireExilirID;
+                case Elements.Earth:
+                    return _exilir.ID == _instance.Character.EarthExilirID;
+            }
+            return false;
+        }
+    }
+
+    public static void EquipExilir (Exilir _exilir, Elements _element) {        
+            switch (_element) {
+                case Elements.Metal:
+                    _instance.Character.MetalExilirID = _exilir.ID;
+                    break;
+                case Elements.Wood:
+                    _instance.Character.WoodExilirID = _exilir.ID;
+                    break;
+                case Elements.Water:
+                    _instance.Character.WaterExilirID = _exilir.ID;
+                    break;
+                case Elements.Fire:
+                    _instance.Character.FireExilirID = _exilir.ID;
+                    break;
+                case Elements.Earth:
+                    _instance.Character.EarthExilirID = _exilir.ID;
+                    break;
+            }
     }
     #endregion
 

@@ -12,10 +12,8 @@ public class ExilirListEntity : MonoBehaviour
     public Exilir Exilir;
     public Sprite[] RarityBanners;
     public Sprite[] ElementalSprites;
-    public bool IsSpecialSprite;
-    public Sprite SpecialSprite;
     public int IndexInList;
-    public ExilirPanelManager ListManager;
+    public IExilirEntityList ListManager;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +34,8 @@ public class ExilirListEntity : MonoBehaviour
         int elementIndex = (int)Exilir.Element - 1;
         ExilirImage.sprite = ElementalSprites[elementIndex];
 
-        if (IsSpecialSprite) {
-            ExilirImage.sprite = SpecialSprite;
+        if (Exilir.IsSpecialSprite) {
+            ExilirImage.sprite = Exilir.SpecialSprite;
         }
     }
 

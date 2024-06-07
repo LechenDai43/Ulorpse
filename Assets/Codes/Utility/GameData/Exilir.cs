@@ -19,6 +19,13 @@ public class Exilir: IEffect
 	public StatAdjustTypes AdjustType {get; set;}
 	[SerializeField]
 	public int Level {get; set;}
+	[SerializeField]
+	public int ID {get; set;}
+	[SerializeField]
+    public bool IsSpecialSprite;
+	[SerializeField]
+    public Sprite SpecialSprite;
+	
 
 	public void ApplyEffect(IFightable fighter) {
 		PrimaryStatAdjustment(fighter);
@@ -26,6 +33,14 @@ public class Exilir: IEffect
 
 	public void PrimaryStatAdjustment(IFightable fighter) {
 		// to apply stat adjustment
+	}
+
+	public string GetLocalizedDescription() {
+		return "";
+	}
+
+	public string GetLocalizedName() {
+		return "";
 	}
 }
 
