@@ -14,14 +14,14 @@ public class Saving
     [SerializeField]
     public int Level;
     [SerializeField]
-    public Exilir[] Exilirs;
+    public Elixir[] Elixirs;
     [SerializeField]
-    public int MetalExilirID, WoodExilirID, WaterExilirID, FireExilirID, EarthExilirID;
+    public int MetalElixirID, WoodElixirID, WaterElixirID, FireElixirID, EarthElixirID;
     
     [SerializeField]
     public string _FileName;
     [SerializeField]
-    public int _ExilirCounting;
+    public int _ElixirCounting;
 
     public Sprite CharacterPortrait;
 }

@@ -17,8 +17,8 @@ public class TutorialManager : MonoBehaviour
     public List<AudioResource> FemaleDubResources;
     private List<AudioResource> DubResources;
     public DialogueManager TutorialDialogueManager;
-    public Image Player, Exilir, Opponent;
-    public Sprite[] Exilirs, Opponents;
+    public Image Player, Elixir, Opponent;
+    public Sprite[] Elixirs, Opponents;
     public Button GourdButton, BodyButton;
     public GameObject MultiPurposePanel, Barrier;
 
@@ -49,15 +49,15 @@ public class TutorialManager : MonoBehaviour
             DubResources = MaleDubResources;
             switch (GameManager.GetProvince()) {
                 case Provinces.Azure:
-                    Exilir.sprite = Exilirs[4];
+                    Elixir.sprite = Elixirs[4];
                     Opponent.sprite = Opponents[2];
                     break;
                 case Provinces.Tranquil:
-                    Exilir.sprite = Exilirs[3];
+                    Elixir.sprite = Elixirs[3];
                     Opponent.sprite = Opponents[0];
                     break;
                 case Provinces.Indulge:
-                    Exilir.sprite = Exilirs[0];
+                    Elixir.sprite = Elixirs[0];
                     Opponent.sprite = Opponents[1];
                     break;
             }
@@ -66,15 +66,15 @@ public class TutorialManager : MonoBehaviour
             DubResources = FemaleDubResources;
             switch (GameManager.GetProvince()) {
                 case Provinces.Azure:
-                    Exilir.sprite = Exilirs[2];
+                    Elixir.sprite = Elixirs[2];
                     Opponent.sprite = Opponents[3];
                     break;
                 case Provinces.Tranquil:
-                    Exilir.sprite = Exilirs[4];
+                    Elixir.sprite = Elixirs[4];
                     Opponent.sprite = Opponents[2];
                     break;
                 case Provinces.Indulge:
-                    Exilir.sprite = Exilirs[1];
+                    Elixir.sprite = Elixirs[1];
                     Opponent.sprite = Opponents[4];
                     break;
             }
@@ -173,50 +173,50 @@ public class TutorialManager : MonoBehaviour
     private void Line07PreDialogueFunction() {
         NormalPreDialogue();
 
-        // Create the initial Exilir
-        Exilir exilir = new Exilir();
+        // Create the initial Elixir
+        Elixir elixir = new Elixir();
         if (GameManager.GetGender() == Genders.Male) {
             switch(GameManager.GetProvince()) {
                 case Provinces.Azure:
-                    exilir.Element = Elements.Earth;
+                    elixir.Element = Elements.Earth;
                     break;
                 case Provinces.Tranquil:
-                    exilir.Element = Elements.Fire;
+                    elixir.Element = Elements.Fire;
                     break;
                 case Provinces.Indulge:
-                    exilir.Element = Elements.Metal;
+                    elixir.Element = Elements.Metal;
                     break;
             }
         }
         else {
             switch(GameManager.GetProvince()) {
                 case Provinces.Azure:
-                    exilir.Element = Elements.Water;
+                    elixir.Element = Elements.Water;
                     break;
                 case Provinces.Tranquil:
-                    exilir.Element = Elements.Earth;
+                    elixir.Element = Elements.Earth;
                     break;
                 case Provinces.Indulge:
-                    exilir.Element = Elements.Wood;
+                    elixir.Element = Elements.Wood;
                     break;
             }
         }
-        exilir.Rarity = Rarities.Rare;
-        exilir.Name = "An Exilir";
-        exilir.Level = 5;
-        exilir.StatType = StatTypes.Attack;
-        exilir.AdjustType = StatAdjustTypes.Value;
-        exilir.ID = 1;
+        elixir.Rarity = Rarities.Rare;
+        elixir.Name = "An Elixir";
+        elixir.Level = 5;
+        elixir.StatType = StatTypes.Attack;
+        elixir.AdjustType = StatAdjustTypes.Value;
+        elixir.ID = 1;
 
-        GameManager.AddExilir(exilir);        
+        GameManager.AddElixir(elixir);        
 
         Player.gameObject.SetActive(false);
-        Exilir.gameObject.SetActive(true);
+        Elixir.gameObject.SetActive(true);
     }    
 
     private void Line15PreDialogueFunction() {
         NormalPreDialogue();     
-        Exilir.gameObject.SetActive(false);
+        Elixir.gameObject.SetActive(false);
     }
 
     private void Line16PreDialogueFunction() {
@@ -263,14 +263,14 @@ public class TutorialManager : MonoBehaviour
         _dialoguePointer++;
         paused = true;
         
-        ExilirListEntity[] Entities = MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().Entities;
-        foreach(ExilirListEntity entity in Entities) {
+        ElixirListEntity[] Entities = MultiPurposePanel.GetComponentInChildren<ElixirPanelManager>().Entities;
+        foreach(ElixirListEntity entity in Entities) {
             Button button = entity.gameObject.GetComponentInChildren<Button>();
             button.interactable = true;
-            button.onClick.AddListener(OpenExilirEntityToMoveOn);
+            button.onClick.AddListener(OpenElixirEntityToMoveOn);
         }
         
-        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = false;
+        MultiPurposePanel.GetComponentInChildren<ElixirPanelManager>().CloseButton.interactable = false;
         Barrier.SetActive(false);
     }
 
@@ -280,8 +280,8 @@ public class TutorialManager : MonoBehaviour
         }
         _dialoguePointer++;
         paused = true;
-        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = true;
-        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.onClick.AddListener(CloseExilirPanelToMoveOn);
+        MultiPurposePanel.GetComponentInChildren<ElixirPanelManager>().CloseButton.interactable = true;
+        MultiPurposePanel.GetComponentInChildren<ElixirPanelManager>().CloseButton.onClick.AddListener(CloseElixirPanelToMoveOn);
         Barrier.SetActive(false);
     }    
 
@@ -301,8 +301,8 @@ public class TutorialManager : MonoBehaviour
         _dialoguePointer++;
         TutorialDialogueManager.gameObject.SetActive(false);
         Barrier.SetActive(false);
-        Button SelectExilirButton = MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().SelectButton;
-        SelectExilirButton.onClick.AddListener(EquipExilirToMoveOn);
+        Button SelectElixirButton = MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().SelectButton;
+        SelectElixirButton.onClick.AddListener(EquipElixirToMoveOn);
         paused = true;
         Button CloseButton = MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().CloseButton;
         CloseButton.onClick.AddListener(CloseBodyPanelToMoveOn);
@@ -326,16 +326,16 @@ public class TutorialManager : MonoBehaviour
         paused = false;
     }
 
-    public void OpenExilirEntityToMoveOn() {
+    public void OpenElixirEntityToMoveOn() {
         if (_dialoguePointer == 13) {
             TutorialDialogueManager.ContinueToNextLine();
             paused = false;
             Barrier.SetActive(true);
-            MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = false;
+            MultiPurposePanel.GetComponentInChildren<ElixirPanelManager>().CloseButton.interactable = false;
         }
     }
     
-    public void CloseExilirPanelToMoveOn() {
+    public void CloseElixirPanelToMoveOn() {
         if (_dialoguePointer == 14) {
             TutorialDialogueManager.ContinueToNextLine();
             GourdButton.interactable = false;
@@ -353,7 +353,7 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    public void EquipExilirToMoveOn() {
+    public void EquipElixirToMoveOn() {
         if (_dialoguePointer == 19) {
             TutorialDialogueManager.gameObject.SetActive(true);
             TutorialDialogueManager.ContinueToNextLine();

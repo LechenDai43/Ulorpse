@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Exilir: IEffect
+public class Elixir: IEffect
 {
 	[SerializeField]
 	public string Name {get; set;}
@@ -45,7 +45,7 @@ public class Exilir: IEffect
 }
 
 [System.Serializable]
-public class ElementalExilir: Exilir
+public class ElementalElixir: Elixir
 {
 	[SerializeField]
 	public AttackTypes AttackType {get; set;}
@@ -58,7 +58,7 @@ public class ElementalExilir: Exilir
 }
 
 [System.Serializable]
-public class DoubleExilir: Exilir
+public class DoubleElixir: Elixir
 {
 	[SerializeField]
 	public StatTypes SecondaryStatType {get; set;}
@@ -74,7 +74,7 @@ public class DoubleExilir: Exilir
 }
 
 [System.Serializable]
-public class AttackExilir: Exilir
+public class AttackElixir: Elixir
 {
 	[SerializeField]
 	public AttackModes AttackMode {get; set;}
@@ -87,7 +87,7 @@ public class AttackExilir: Exilir
 }
 
 [System.Serializable]
-public class SurvivalExilir: Exilir
+public class SurvivalElixir: Elixir
 {
 	[SerializeField]
 	public SurvivalSkills SurvivalSkill {get; set;}
@@ -100,7 +100,7 @@ public class SurvivalExilir: Exilir
 }
 
 [System.Serializable]
-public class EnhanceExilir: Exilir
+public class EnhanceElixir: Elixir
 {
 	[SerializeField]
 	public EnhanceSkills EnhanceSkill {get; set;}
@@ -176,22 +176,22 @@ public enum EnhanceSkills {
 	Nullification
 }
 
-public class ExilirComparer: IComparer 
+public class ElixirComparer: IComparer 
 {
 	int IComparer.Compare(object x, object y) {
-		if (x.GetType() != typeof(Exilir) || y.GetType() != typeof(Exilir)) {
+		if (x.GetType() != typeof(Elixir) || y.GetType() != typeof(Elixir)) {
 			return 0;
 		}
 
-		Exilir exilirX = (Exilir)x, exilirY = (Exilir)y;
-		if (exilirX.Level != exilirY.Level) {
-			return exilirY.Level - exilirX.Level;
+		Elixir elixirX = (Elixir)x, elixirY = (Elixir)y;
+		if (elixirX.Level != elixirY.Level) {
+			return elixirY.Level - elixirX.Level;
 		}
-		if (exilirX.Rarity == exilirY.Rarity) {			
-			return (int)exilirX.Element - (int)exilirY.Element;
+		if (elixirX.Rarity == elixirY.Rarity) {			
+			return (int)elixirX.Element - (int)elixirY.Element;
 		}
 		else {
-			return (int)exilirY.Rarity - (int)exilirX.Rarity;
+			return (int)elixirY.Rarity - (int)elixirX.Rarity;
 		}
 	}
 }

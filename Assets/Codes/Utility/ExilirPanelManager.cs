@@ -6,31 +6,31 @@ using UnityEditor;
 using System;
 using UnityEngine.Audio;
 
-public class ExilirPanelManager : MonoBehaviour, IExilirEntityList
+public class ElixirPanelManager : MonoBehaviour, IElixirEntityList
 {
 
-    public ScrollRect ExilirListScrollView;
+    public ScrollRect ElixirListScrollView;
     public RectTransform content;
-    public GameObject ExilirPrefab;
+    public GameObject ElixirPrefab;
     public Image Enlargement, Banner, Element;
     public Text Name, Description;
     public Sprite[] Elements;
     public Button CloseButton;
     public IconManager IconManager;
 
-    private Exilir[] Exilirs;
-    public ExilirListEntity[] Entities;
+    public Elixir[] Elixirs;
+    public ElixirListEntity[] Entities;
     // Start is called before the first frame update
     void Start()
     {
-        content = ExilirListScrollView.content;
-        Exilirs = GameManager.GetExilirs();
-        Entities = new ExilirListEntity[Exilirs.Length];
+        content = ElixirListScrollView.content;
+        Elixirs = GameManager.GetElixirs();
+        Entities = new ElixirListEntity[Elixirs.Length];
 
-        for (int i = 0; i < Exilirs.Length; i++) {
-            GameObject newItem = Instantiate(ExilirPrefab, content);
-            ExilirListEntity entity = newItem.gameObject.GetComponent<ExilirListEntity>();
-            entity.Exilir = Exilirs[i];
+        for (int i = 0; i < Elixirs.Length; i++) {
+            GameObject newItem = Instantiate(ElixirPrefab, content);
+            ElixirListEntity entity = newItem.gameObject.GetComponent<ElixirListEntity>();
+            entity.Elixir = Elixirs[i];
             entity.IndexInList = i;
             entity.ListManager = this;
             entity.PopulateImage();
@@ -46,13 +46,13 @@ public class ExilirPanelManager : MonoBehaviour, IExilirEntityList
     }
 
     public void SelectEntity(int index) {
-        if (index < Exilirs.Length) {
-            ExilirListEntity entity = Entities[index];
-            Enlargement.sprite = entity.ExilirImage.sprite;
+        if (index < Elixirs.Length) {
+            ElixirListEntity entity = Entities[index];
+            Enlargement.sprite = entity.ElixirImage.sprite;
             Banner.sprite = entity.Banner.sprite;
-            Name.text = entity.Exilir.Name;
-            Description.text = entity.Exilir.Description;
-            int elementIndex = (int)entity.Exilir.Element - 1;
+            Name.text = entity.Elixir.Name;
+            Description.text = entity.Elixir.Description;
+            int elementIndex = (int)entity.Elixir.Element - 1;
             Element.sprite = Elements[elementIndex];
         }
     }

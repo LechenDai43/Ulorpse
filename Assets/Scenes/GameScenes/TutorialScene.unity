@@ -154,14 +154,14 @@ MonoBehaviour:
     FirstName: 
     LastName: 
     Level: 0
-    Exilirs: []
-    MetalExilirID: 0
-    WoodExilirID: 0
-    WaterExilirID: 0
-    FireExilirID: 0
-    EarthExilirID: 0
+    Elixirs: []
+    MetalElixirID: 0
+    WoodElixirID: 0
+    WaterElixirID: 0
+    FireElixirID: 0
+    EarthElixirID: 0
     _FileName: 
-    _ExilirCounting: 0
+    _ElixirCounting: 0
     CharacterPortrait: {fileID: 0}
   locale: 0
   soundVolume: 100
@@ -683,8 +683,9 @@ GameObject:
   - component: {fileID: 1261974271}
   - component: {fileID: 1261974270}
   - component: {fileID: 1261974269}
+  - component: {fileID: 1261974272}
   m_Layer: 5
-  m_Name: Exilir
+  m_Name: Elixier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,6 +748,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 744, y: 744}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1261974272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261974268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13eda70619f1b4f46b24fc4247ca6b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ElixirImage: {fileID: 0}
+  Banner: {fileID: 0}
+  Elixir:
+    IsSpecialSprite: 0
+    SpecialSprite: {fileID: 0}
+  RarityBanners: []
+  ElementalSprites: []
+  IndexInList: 0
 --- !u!1 &1356144166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,9 +1220,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 747f2630ec6784c408fe657b1759addc, type: 3}
   TutorialDialogueManager: {fileID: 1488873835}
   Player: {fileID: 970088380}
-  Exilir: {fileID: 1261974269}
+  Elixir: {fileID: 1261974269}
   Opponent: {fileID: 439591866}
-  Exilirs:
+  Elixirs:
   - {fileID: 21300000, guid: ffd5e25014ba71b4c91a0afd2515e25b, type: 3}
   - {fileID: 21300000, guid: 9fcfff65d7ebce744a78a2b6993aedc1, type: 3}
   - {fileID: 21300000, guid: 20c4b89c316dd4e49922f772f8508c9c, type: 3}
@@ -1432,7 +1453,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1236718041}
     - target: {fileID: 3051496604750940280, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
-      propertyPath: ExilirListPanelPrefab
+      propertyPath: ElixirListPanelPrefab
       value: 
       objectReference: {fileID: 5731596134370712337, guid: 586484fc20abeb34ab6b1409a06a238c, type: 3}
     - target: {fileID: 6456627537319385011, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}

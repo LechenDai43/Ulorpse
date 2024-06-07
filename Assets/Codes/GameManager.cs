@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     }
 
     public Saving Character;
+    public static NameLocale NameLocaleManager;
 
     #region variables
     public Locales locale;
@@ -127,71 +128,71 @@ public class GameManager : MonoBehaviour
         _instance.Character.CharacterPortrait = _sprite;
     }
 
-    public static Exilir[] GetExilirs() {
-        Array.Sort(_instance.Character.Exilirs, new ExilirComparer());
-        return _instance.Character.Exilirs;
+    public static Elixir[] GetElixirs() {
+        Array.Sort(_instance.Character.Elixirs, new ElixirComparer());
+        return _instance.Character.Elixirs;
     }
-    public static void AddExilir(Exilir _exilir) {
-        int newLength = _instance.Character.Exilirs == null? 1: _instance.Character.Exilirs.Length + 1;
-        Array.Resize(ref _instance.Character.Exilirs, newLength);
-        _instance.Character.Exilirs[newLength - 1] = _exilir;
+    public static void AddElixir(Elixir _elixir) {
+        int newLength = _instance.Character.Elixirs == null? 1: _instance.Character.Elixirs.Length + 1;
+        Array.Resize(ref _instance.Character.Elixirs, newLength);
+        _instance.Character.Elixirs[newLength - 1] = _elixir;
     }
 
-    public static bool IsExilirEquipped(Exilir _exilir, Elements _element) {
-        if (_exilir.Element == _element) {
-            if (_exilir.ID == _instance.Character.MetalExilirID) {
+    public static bool IsElixirEquipped(Elixir _elixir, Elements _element) {
+        if (_elixir.Element == _element) {
+            if (_elixir.ID == _instance.Character.MetalElixirID) {
                 return true;
             }
-            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+            else if (_elixir.ID == _instance.Character.MetalElixirID) {
                 return true;
             }
-            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+            else if (_elixir.ID == _instance.Character.MetalElixirID) {
                 return true;
             }
-            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+            else if (_elixir.ID == _instance.Character.MetalElixirID) {
                 return true;
             }
-            else if (_exilir.ID == _instance.Character.MetalExilirID) {
+            else if (_elixir.ID == _instance.Character.MetalElixirID) {
                 return true;
             }
             return false;
         }
         else {
-            if (_exilir.Element != Elements.Normal) {
+            if (_elixir.Element != Elements.Normal) {
                 return false;
             }
             switch (_element) {
                 case Elements.Metal:
-                    return _exilir.ID == _instance.Character.MetalExilirID;
+                    return _elixir.ID == _instance.Character.MetalElixirID;
                 case Elements.Wood:
-                    return _exilir.ID == _instance.Character.WoodExilirID;
+                    return _elixir.ID == _instance.Character.WoodElixirID;
                 case Elements.Water:
-                    return _exilir.ID == _instance.Character.WaterExilirID;
+                    return _elixir.ID == _instance.Character.WaterElixirID;
                 case Elements.Fire:
-                    return _exilir.ID == _instance.Character.FireExilirID;
+                    return _elixir.ID == _instance.Character.FireElixirID;
                 case Elements.Earth:
-                    return _exilir.ID == _instance.Character.EarthExilirID;
+                    return _elixir.ID == _instance.Character.EarthElixirID;
             }
             return false;
         }
     }
 
-    public static void EquipExilir (Exilir _exilir, Elements _element) {        
+    public static void EquipElixir (Elixir _elixir, Elements _element) {        
             switch (_element) {
                 case Elements.Metal:
-                    _instance.Character.MetalExilirID = _exilir.ID;
+                    _instance.Character.MetalElixirID = _elixir.ID;
                     break;
                 case Elements.Wood:
-                    _instance.Character.WoodExilirID = _exilir.ID;
+                    _instance.Character.WoodElixirID = _elixir.ID;
                     break;
                 case Elements.Water:
-                    _instance.Character.WaterExilirID = _exilir.ID;
+                    _instance.Character.WaterElixirID = _elixir.ID;
                     break;
                 case Elements.Fire:
-                    _instance.Character.FireExilirID = _exilir.ID;
+                    _instance.Character.FireElixirID = _elixir.ID;
                     break;
                 case Elements.Earth:
-                    _instance.Character.EarthExilirID = _exilir.ID;
+                    _instance.Character.EarthElixirID = _elixir.ID;
                     break;
             }
     }
@@ -215,7 +216,7 @@ public class GameManager : MonoBehaviour
                 Character.Gender = Genders.Male;
                 Character.Province = Provinces.Tranquil;
                 Character.CharacterPortrait = player;
-                Character.Exilirs = new Exilir[0];
+                Character.Elixirs = new Elixir[0];
             #endif
         }
         else

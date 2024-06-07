@@ -476,6 +476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GuordButton: {fileID: 6456627537319385011}
   BodyButton: {fileID: 2864055804777132631}
-  ExilirListPanelPrefab: {fileID: 5731596134370712337, guid: 586484fc20abeb34ab6b1409a06a238c, type: 3}
+  ElixirListPanelPrefab: {fileID: 5731596134370712337, guid: 586484fc20abeb34ab6b1409a06a238c, type: 3}
   BodyPanelPrefab: {fileID: 6469938746727261872, guid: 5a7678e5777d29e4582a2d99a39bbd4a, type: 3}
   MainPanel: {fileID: 0}

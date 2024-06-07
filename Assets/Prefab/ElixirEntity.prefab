@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8441615865773709630}
-  - component: {fileID: 4537689868960896111}
   - component: {fileID: 2273317705866954301}
+  - component: {fileID: 9164697634656572544}
   m_Layer: 5
-  m_Name: ExilirEntity
+  m_Name: ElixirEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,36 +39,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4537689868960896111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015049070288787749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13eda70619f1b4f46b24fc4247ca6b3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ExilirImage: {fileID: 6556364440741900003}
-  Banner: {fileID: 2546875346344681973}
-  RarityBanners:
-  - {fileID: 21300000, guid: 69ca8a0c5a6f120408537bdf282c4bf4, type: 3}
-  - {fileID: 21300000, guid: 90a2c308286932c469123e960c24d4e4, type: 3}
-  - {fileID: 21300000, guid: ad77c89c62531d74d8b5b73cd159f1e3, type: 3}
-  - {fileID: 21300000, guid: ab05d56a7e11f1e4b92072fcac1916a3, type: 3}
-  ElementalSprites:
-  - {fileID: 21300000, guid: ffd5e25014ba71b4c91a0afd2515e25b, type: 3}
-  - {fileID: 21300000, guid: 9fcfff65d7ebce744a78a2b6993aedc1, type: 3}
-  - {fileID: 21300000, guid: 20c4b89c316dd4e49922f772f8508c9c, type: 3}
-  - {fileID: 21300000, guid: a87d694bf82173b4db9dc30cdf934be1, type: 3}
-  - {fileID: 21300000, guid: dd347c7e419b80846aebb74f28825dd7, type: 3}
-  - {fileID: 21300000, guid: 078117821fe981f4cae280136ca565e7, type: 3}
-  IsSpecialSprite: 0
-  SpecialSprite: {fileID: 0}
-  IndexInList: 0
-  ListManager: {fileID: 0}
 --- !u!114 &2273317705866954301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,9 +83,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4537689868960896111}
-        m_TargetAssemblyTypeName: ExilirListEntity, Assembly-CSharp
-        m_MethodName: SelectThisExilir
+      - m_Target: {fileID: 9164697634656572544}
+        m_TargetAssemblyTypeName: ElixirListEntity, Assembly-CSharp
+        m_MethodName: SelectThisElixir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -125,6 +95,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9164697634656572544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015049070288787749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed86e2d86896240a5d8c33d50771e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ElixirImage: {fileID: 6556364440741900003}
+  Banner: {fileID: 2546875346344681973}
+  Elixir:
+    IsSpecialSprite: 0
+    SpecialSprite: {fileID: 0}
+  RarityBanners:
+  - {fileID: 21300000, guid: 69ca8a0c5a6f120408537bdf282c4bf4, type: 3}
+  - {fileID: 21300000, guid: ad77c89c62531d74d8b5b73cd159f1e3, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: ab05d56a7e11f1e4b92072fcac1916a3, type: 3}
+  ElementalSprites:
+  - {fileID: 21300000, guid: ffd5e25014ba71b4c91a0afd2515e25b, type: 3}
+  - {fileID: 21300000, guid: 9fcfff65d7ebce744a78a2b6993aedc1, type: 3}
+  - {fileID: 21300000, guid: 20c4b89c316dd4e49922f772f8508c9c, type: 3}
+  - {fileID: 21300000, guid: a87d694bf82173b4db9dc30cdf934be1, type: 3}
+  - {fileID: 21300000, guid: dd347c7e419b80846aebb74f28825dd7, type: 3}
+  - {fileID: 21300000, guid: 078117821fe981f4cae280136ca565e7, type: 3}
+  IndexInList: 0
 --- !u!1 &2597474852747665291
 GameObject:
   m_ObjectHideFlags: 0

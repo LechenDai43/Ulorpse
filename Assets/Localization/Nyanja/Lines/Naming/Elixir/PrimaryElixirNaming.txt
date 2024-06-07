@@ -1,0 +1,24 @@
+normal_metal:Mpira Wamkuwa|
+rare_metal:Mpira Wamkuwa Wamphamvu|
+epic_metal:Mpira Wamkuwa Wamkulu|
+legendary_metal:Mpira Wamkuwa Wopatulika|
+normal_wood:Mpira Wamatabwa|
+rare_wood:Mpira Wamatabwa Wamphamvu|
+epic_wood:Mpira Wamatabwa Wamkulu|
+legendary_wood:Mpira Wamatabwa Wopatulika|
+normal_water:Mpira Wamadzi|
+rare_water:Mpira Wamadzi Wamphamvu|
+epic_water:Mpira Wamadzi Wamkulu|
+legendary_water:Mpira Wamadzi Wopatulika|
+normal_fire:Mpira Wamoto|
+rare_fire:Mpira Wamoto Wamphamvu|
+epic_fire:Mpira Wamoto Wamkulu|
+legendary_fire:Mpira Wamoto Wopatulika|
+normal_earth:Mpira Wadziko|
+rare_earth:Mpira Wadziko Wamphamvu|
+epic_earth:Mpira Wadziko Wamkulu|
+legendary_earth:Mpira Wadziko Wopatulika|
+normal_normal:Mpira Wamba|
+rare_normal:Mpira Wamphamvu|
+epic_normal:Mpira Wamkulu|
+legendary_normal:Mpira Wopatulika|

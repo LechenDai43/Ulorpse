@@ -211,7 +211,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7018561540880471692}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999326
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -445,7 +445,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8970371399274087665}
-        m_TargetAssemblyTypeName: ExilirPanelManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: ElixirPanelManager, Assembly-CSharp
         m_MethodName: CloseButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 8430752322020550263}
   - component: {fileID: 8970371399274087665}
   m_Layer: 5
-  m_Name: ExilirPanel
+  m_Name: ElixirPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,9 +547,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4eb78a4f8aa6e4e81eaba5a23cc3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExilirListScrollView: {fileID: 2379686425321898848}
+  ElixirListScrollView: {fileID: 2379686425321898848}
   content: {fileID: 0}
-  ExilirPrefab: {fileID: 1015049070288787749, guid: 435f9dafa9ed0ae40b1a933ecb06132e, type: 3}
+  ElixirPrefab: {fileID: 1015049070288787749, guid: 435f9dafa9ed0ae40b1a933ecb06132e, type: 3}
   Enlargement: {fileID: 338890238063694132}
   Banner: {fileID: 3346545861493914169}
   Element: {fileID: 22847335490606037}
@@ -709,7 +709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00068432296}
+  m_AnchoredPosition: {x: 0, y: 0.000006468676}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &9203765488026240405
@@ -826,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2922197312895235797, guid: 87d66ae2de1937d44b8f0ed77728dd40, type: 3}
       propertyPath: m_Name
-      value: ExilirDetail
+      value: ElixirDetail
       objectReference: {fileID: 0}
     - target: {fileID: 4848743949642331113, guid: 87d66ae2de1937d44b8f0ed77728dd40, type: 3}
       propertyPath: m_AnchorMax.x

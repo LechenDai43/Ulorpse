@@ -1,0 +1,24 @@
+normal_metal:Metal Elixir|
+rare_metal:Rare Metal Elixir|
+epic_metal:Epic Metal Elixir|
+legendary_metal:Divine Metal Elixir|
+normal_wood:Wood Elixir|
+rare_wood:Rare Wood Elixir|
+epic_wood:Epic Wood Elixir|
+legendary_wood:Divine Wood Elixir|
+normal_water:Water Elixir|
+rare_water:Rare Water Elixir|
+epic_water:Epic Water Elixir|
+legendary_water:Divine Water Elixir|
+normal_fire:Fire Elixir|
+rare_fire:Rare Fire Elixir|
+epic_fire:Epic Fire Elixir|
+legendary_fire:Divine Fire Elixir|
+normal_earth:Earth Elixir|
+rare_earth:Rare Earth Elixir|
+epic_earth:Epic Earth Elixir|
+legendary_earth:Divine Earth Elixir|
+normal_normal:Common Elixir|
+rare_normal:Rare Elixir|
+epic_normal:Epic Elixir|
+legendary_normal:Divine Elixir|

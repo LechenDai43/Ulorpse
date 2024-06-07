@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 2419210464991789386}
   - component: {fileID: 7586185676071321578}
   m_Layer: 5
-  m_Name: ExilirIcon
+  m_Name: ElixirIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1294,7 +1294,7 @@ GameObject:
   - component: {fileID: 3938607185801642071}
   - component: {fileID: 6382616921719846658}
   m_Layer: 5
-  m_Name: ExilirIcon
+  m_Name: ElixirIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 1272838601405889604}
   - component: {fileID: 6729071528985669963}
   m_Layer: 5
-  m_Name: ExilirIcon
+  m_Name: ElixirIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2049,7 +2049,7 @@ GameObject:
   - component: {fileID: 5569737718452182662}
   - component: {fileID: 8023169012909956036}
   m_Layer: 5
-  m_Name: ExilirIcon
+  m_Name: ElixirIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2687,8 +2687,8 @@ MonoBehaviour:
   WaterDetail: {fileID: 3243125018824205057}
   FireDetail: {fileID: 7198862823880421843}
   EarthDetail: {fileID: 5302438071387292775}
-  ListOfExilirs: {fileID: 1594559898400476869}
-  ExilirEntityPrefab: {fileID: 1015049070288787749, guid: 435f9dafa9ed0ae40b1a933ecb06132e, type: 3}
+  ListOfElixirs: {fileID: 1594559898400476869}
+  ElixirEntityPrefab: {fileID: 1015049070288787749, guid: 435f9dafa9ed0ae40b1a933ecb06132e, type: 3}
   RightPanel: {fileID: 5607767402191577983}
   DetailPanel: {fileID: 4700952737061810015}
   DetailEnlargement: {fileID: 1543590829133089124}
@@ -2699,7 +2699,7 @@ MonoBehaviour:
   SelectButton: {fileID: 904947009474486819}
   CloseButton: {fileID: 3146870541585620092}
   CancelButton: {fileID: 0}
-  ExilirSprites:
+  ElixirSprites:
   - {fileID: 21300000, guid: ffd5e25014ba71b4c91a0afd2515e25b, type: 3}
   - {fileID: 21300000, guid: 9fcfff65d7ebce744a78a2b6993aedc1, type: 3}
   - {fileID: 21300000, guid: 20c4b89c316dd4e49922f772f8508c9c, type: 3}
@@ -2732,7 +2732,7 @@ GameObject:
   - component: {fileID: 5200525362407557049}
   - component: {fileID: 8803136934427728978}
   m_Layer: 5
-  m_Name: ExilirIcon
+  m_Name: ElixirIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4476,7 +4476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2922197312895235797, guid: 87d66ae2de1937d44b8f0ed77728dd40, type: 3}
       propertyPath: m_Name
-      value: ExilirDetail
+      value: ElixirDetail
       objectReference: {fileID: 0}
     - target: {fileID: 2922197312895235797, guid: 87d66ae2de1937d44b8f0ed77728dd40, type: 3}
       propertyPath: m_IsActive

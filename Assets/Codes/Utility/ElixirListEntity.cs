@@ -5,15 +5,15 @@ using UnityEngine.UI;
 using UnityEditor;
 using System;
 
-public class ExilirListEntity : MonoBehaviour
+public class ElixirListEntity : MonoBehaviour
 {
 
-    public Image ExilirImage, Banner;
-    public Exilir Exilir;
+    public Image ElixirImage, Banner;
+    public Elixir Elixir;
     public Sprite[] RarityBanners;
     public Sprite[] ElementalSprites;
     public int IndexInList;
-    public IExilirEntityList ListManager;
+    public IElixirEntityList ListManager;
 
     // Start is called before the first frame update
     void Start()
@@ -28,18 +28,18 @@ public class ExilirListEntity : MonoBehaviour
     }
 
     public void PopulateImage() {
-        int rarityIndex = (int)Exilir.Rarity - 2;
+        int rarityIndex = (int)Elixir.Rarity - 2;
         Banner.sprite = RarityBanners[rarityIndex];
 
-        int elementIndex = (int)Exilir.Element - 1;
-        ExilirImage.sprite = ElementalSprites[elementIndex];
+        int elementIndex = (int)Elixir.Element - 1;
+        ElixirImage.sprite = ElementalSprites[elementIndex];
 
-        if (Exilir.IsSpecialSprite) {
-            ExilirImage.sprite = Exilir.SpecialSprite;
+        if (Elixir.IsSpecialSprite) {
+            ElixirImage.sprite = Elixir.SpecialSprite;
         }
     }
 
-    public void SelectThisExilir() {
+    public void SelectThisElixir() {
         ListManager.SelectEntity(IndexInList);
     }
 }

@@ -5,81 +5,81 @@ using UnityEngine.UI;
 using UnityEditor;
 using System;
 
-public class BodyPanelManager : MonoBehaviour, IExilirEntityList
+public class BodyPanelManager : MonoBehaviour, IElixirEntityList
 {
     public Image MetalIcon, WoodIcon, WaterIcon, FireIcon, EarthIcon;
     public Image MetalBanner, WoodBanner, WaterBanner, FireBanner, EarthBanner;
     public Text MetalTitle, WoodTitle, WaterTitle, FireTitle, EarthTitle;
     public Text MetalName, WoodName, WaterName, FireName, EarthName;
     public Text MetalDetail, WoodDetail, WaterDetail, FireDetail, EarthDetail;
-    public ScrollRect ListOfExilirs;
-    public GameObject ExilirEntityPrefab;
+    public ScrollRect ListOfElixirs;
+    public GameObject ElixirEntityPrefab;
     public GameObject RightPanel, DetailPanel;
     public Image DetailEnlargement, DetailBanner, DetailElement;
     public Text DetailName, DetailDescription;
     public Button SelectButton, CloseButton, CancelButton;
 
-    public ArrayList MetalExilirs = new ArrayList(), WoodExilirs = new ArrayList(), 
-    WaterExilirs = new ArrayList(), FireExilirs = new ArrayList(), 
-    EarthExilirs = new ArrayList(), targetExilirs;
-    public Sprite[] ExilirSprites, BannerSprites, ElementSprites;
+    public ArrayList MetalElixirs = new ArrayList(), WoodElixirs = new ArrayList(), 
+    WaterElixirs = new ArrayList(), FireElixirs = new ArrayList(), 
+    EarthElixirs = new ArrayList(), targetElixirs;
+    public Sprite[] ElixirSprites, BannerSprites, ElementSprites;
     public IconManager IconManager;
     // Start is called before the first frame update
     void Start()
     {
-        Exilir[] Exiliers = GameManager.GetExilirs();
-        foreach (Exilir exilir in Exiliers) {
-            switch(exilir.Element) {
+        Elixir[] Exiliers = GameManager.GetElixirs();
+        foreach (Elixir elixir in Exiliers) {
+            switch(elixir.Element) {
                 case Elements.Metal:
-                    MetalExilirs.Add(exilir);
-                    if (GameManager.IsExilirEquipped(exilir, Elements.Metal)) {
-                        PopulateEquippedExilir(exilir, MetalIcon, MetalBanner, MetalName, MetalDetail);
+                    MetalElixirs.Add(elixir);
+                    if (GameManager.IsElixirEquipped(elixir, Elements.Metal)) {
+                        PopulateEquippedElixir(elixir, MetalIcon, MetalBanner, MetalName, MetalDetail);
                     }
                     break;
                 case Elements.Wood:
-                    WoodExilirs.Add(exilir);
-                    if (GameManager.IsExilirEquipped(exilir, Elements.Wood)) {
-                        PopulateEquippedExilir(exilir, WoodIcon, WoodBanner, WoodName, WoodDetail);
+                    WoodElixirs.Add(elixir);
+                    if (GameManager.IsElixirEquipped(elixir, Elements.Wood)) {
+                        PopulateEquippedElixir(elixir, WoodIcon, WoodBanner, WoodName, WoodDetail);
                     }
                     break;
                 case Elements.Water:
-                    WaterExilirs.Add(exilir);
-                    if (GameManager.IsExilirEquipped(exilir, Elements.Water)) {
-                        PopulateEquippedExilir(exilir, WaterIcon, WaterBanner, WaterName, WaterDetail);
+                    WaterElixirs.Add(elixir);
+                    if (GameManager.IsElixirEquipped(elixir, Elements.Water)) {
+                        PopulateEquippedElixir(elixir, WaterIcon, WaterBanner, WaterName, WaterDetail);
                     }
                     break;
                 case Elements.Fire:
-                    FireExilirs.Add(exilir);
-                    if (GameManager.IsExilirEquipped(exilir, Elements.Fire)) {
-                        PopulateEquippedExilir(exilir, FireIcon, FireBanner, FireName, FireDetail);
+                    FireElixirs.Add(elixir);
+                    if (GameManager.IsElixirEquipped(elixir, Elements.Fire)) {
+                        PopulateEquippedElixir(elixir, FireIcon, FireBanner, FireName, FireDetail);
                     }
                     break;
                 case Elements.Earth:
-                    EarthExilirs.Add(exilir);
-                    if (GameManager.IsExilirEquipped(exilir, Elements.Earth)) {
-                        PopulateEquippedExilir(exilir, EarthIcon, EarthBanner, EarthName, EarthDetail);
+                    EarthElixirs.Add(elixir);
+                    if (GameManager.IsElixirEquipped(elixir, Elements.Earth)) {
+                        PopulateEquippedElixir(elixir, EarthIcon, EarthBanner, EarthName, EarthDetail);
                     }
                     break;
                 case Elements.Normal:
-                    MetalExilirs.Add(exilir);
-                    WoodExilirs.Add(exilir);
-                    WaterExilirs.Add(exilir);
-                    FireExilirs.Add(exilir);
-                    EarthExilirs.Add(exilir);
-                    if (GameManager.IsExilirEquipped(exilir, Elements.Metal)) {
-                        PopulateEquippedExilir(exilir, MetalIcon, MetalBanner, MetalName, MetalDetail);
+                    MetalElixirs.Add(elixir);
+                    WoodElixirs.Add(elixir);
+                    WaterElixirs.Add(elixir);
+                    FireElixirs.Add(elixir);
+                    EarthElixirs.Add(elixir);
+                    if (GameManager.IsElixirEquipped(elixir, Elements.Metal)) {
+                        PopulateEquippedElixir(elixir, MetalIcon, MetalBanner, MetalName, MetalDetail);
                     }
-                    else if (GameManager.IsExilirEquipped(exilir, Elements.Wood)) {
-                        PopulateEquippedExilir(exilir, WoodIcon, WoodBanner, WoodName, WoodDetail);
+                    else if (GameManager.IsElixirEquipped(elixir, Elements.Wood)) {
+                        PopulateEquippedElixir(elixir, WoodIcon, WoodBanner, WoodName, WoodDetail);
                     }
-                    else if (GameManager.IsExilirEquipped(exilir, Elements.Water)) {
-                        PopulateEquippedExilir(exilir, WaterIcon, WaterBanner, WaterName, WaterDetail);
+                    else if (GameManager.IsElixirEquipped(elixir, Elements.Water)) {
+                        PopulateEquippedElixir(elixir, WaterIcon, WaterBanner, WaterName, WaterDetail);
                     }
-                    else if (GameManager.IsExilirEquipped(exilir, Elements.Fire)) {
-                        PopulateEquippedExilir(exilir, FireIcon, FireBanner, FireName, FireDetail);
+                    else if (GameManager.IsElixirEquipped(elixir, Elements.Fire)) {
+                        PopulateEquippedElixir(elixir, FireIcon, FireBanner, FireName, FireDetail);
                     }
-                    else if (GameManager.IsExilirEquipped(exilir, Elements.Earth)) {
-                        PopulateEquippedExilir(exilir, EarthIcon, EarthBanner, EarthName, EarthDetail);
+                    else if (GameManager.IsElixirEquipped(elixir, Elements.Earth)) {
+                        PopulateEquippedElixir(elixir, EarthIcon, EarthBanner, EarthName, EarthDetail);
                     }
                     break;
             }
@@ -88,54 +88,54 @@ public class BodyPanelManager : MonoBehaviour, IExilirEntityList
         // populate the title text
     }
 
-    private void PopulateEquippedExilir(Exilir exilir, Image icon, Image banner, Text name, Text description) {
+    private void PopulateEquippedElixir(Elixir elixir, Image icon, Image banner, Text name, Text description) {
         Color emptyColor = new Color(1.0f,1.0f,1.0f,0.0f), fullColor = new Color(1.0f,1.0f,1.0f,1.0f);
         icon.sprite = null;
         icon.color = emptyColor;
-        if (exilir.IsSpecialSprite) {
-            icon.gameObject.transform.parent.GetComponent<Image>().sprite = exilir.SpecialSprite;
+        if (elixir.IsSpecialSprite) {
+            icon.gameObject.transform.parent.GetComponent<Image>().sprite = elixir.SpecialSprite;
         }
         else {    
-            int elementIndex = (int)exilir.Element - 1;
-            icon.gameObject.transform.parent.GetComponent<Image>().sprite = ExilirSprites[elementIndex];
+            int elementIndex = (int)elixir.Element - 1;
+            icon.gameObject.transform.parent.GetComponent<Image>().sprite = ElixirSprites[elementIndex];
         }
         
         icon.gameObject.transform.parent.GetComponent<Image>().color = fullColor;
-        int rarityIndex = (int)exilir.Rarity - 2;
+        int rarityIndex = (int)elixir.Rarity - 2;
         banner.sprite = BannerSprites[rarityIndex];
-        name.text = exilir.GetLocalizedName();
-        description.text = exilir.GetLocalizedDescription();
+        name.text = elixir.GetLocalizedName();
+        description.text = elixir.GetLocalizedDescription();
     }
 
     private bool isRightPanelOpen;
     private bool isDetailPenalOpen;
-    public ExilirListEntity[] Entities;
+    public ElixirListEntity[] Entities;
     private Elements SelectElement;
     public void OpenRightPanel(int key) {
         if (isDetailPenalOpen) {
             return;
         }
 
-        targetExilirs = new ArrayList();
+        targetElixirs = new ArrayList();
         switch(key) {
             case 1:
-                targetExilirs = MetalExilirs;
+                targetElixirs = MetalElixirs;
                 SelectElement = Elements.Metal;
                 break;
             case 2:
-                targetExilirs = WoodExilirs;
+                targetElixirs = WoodElixirs;
                 SelectElement = Elements.Wood;
                 break;
             case 3:
-                targetExilirs = WaterExilirs;
+                targetElixirs = WaterElixirs;
                 SelectElement = Elements.Water;
                 break;
             case 4:
-                targetExilirs = FireExilirs;
+                targetElixirs = FireElixirs;
                 SelectElement = Elements.Fire;
                 break;
             case 5:
-                targetExilirs = EarthExilirs;
+                targetElixirs = EarthElixirs;
                 SelectElement = Elements.Earth;
                 break;
         }
@@ -143,15 +143,15 @@ public class BodyPanelManager : MonoBehaviour, IExilirEntityList
         isRightPanelOpen = true;
         RightPanel.SetActive(true);
 
-        RectTransform content = ListOfExilirs.content;
+        RectTransform content = ListOfElixirs.content;
         foreach (Transform child in content.transform) {
             GameObject.Destroy(child.gameObject);
         }
-        Entities = new ExilirListEntity[targetExilirs.Count];
-        for (int i = 0; i < targetExilirs.Count; i++) {
-           GameObject newItem = Instantiate(ExilirEntityPrefab, content);
-           ExilirListEntity entity = newItem.gameObject.GetComponent<ExilirListEntity>();
-           entity.Exilir = (Exilir)targetExilirs[i];
+        Entities = new ElixirListEntity[targetElixirs.Count];
+        for (int i = 0; i < targetElixirs.Count; i++) {
+           GameObject newItem = Instantiate(ElixirEntityPrefab, content);
+           ElixirListEntity entity = newItem.gameObject.GetComponent<ElixirListEntity>();
+           entity.Elixir = (Elixir)targetElixirs[i];
            entity.IndexInList = i;
            entity.ListManager = this;
            entity.PopulateImage();
@@ -159,26 +159,26 @@ public class BodyPanelManager : MonoBehaviour, IExilirEntityList
         }
     }
 
-    private Exilir selectedExilir;
+    private Elixir selectedElixir;
     public void SelectEntity(int index) {
        isDetailPenalOpen = true;
 
        DetailPanel.SetActive(true);
 
-       ExilirListEntity entity = Entities[index];
-       selectedExilir = entity.Exilir;
-       DetailEnlargement.sprite = entity.ExilirImage.sprite;
+       ElixirListEntity entity = Entities[index];
+       selectedElixir = entity.Elixir;
+       DetailEnlargement.sprite = entity.ElixirImage.sprite;
        DetailBanner.sprite = entity.Banner.sprite;
-       DetailName.text = entity.Exilir.GetLocalizedName();
-       DetailDescription.text = entity.Exilir.GetLocalizedDescription();
-       int elementIndex = (int)entity.Exilir.Element - 1;
+       DetailName.text = entity.Elixir.GetLocalizedName();
+       DetailDescription.text = entity.Elixir.GetLocalizedDescription();
+       int elementIndex = (int)entity.Elixir.Element - 1;
        DetailElement.sprite = ElementSprites[elementIndex];
     }
 
     public void CloseButtonCliked() {
         if (isDetailPenalOpen) {
             DetailPanel.SetActive(false);
-            selectedExilir = null;
+            selectedElixir = null;
             return;
         }
         
@@ -189,35 +189,35 @@ public class BodyPanelManager : MonoBehaviour, IExilirEntityList
     public void SelectButtonCliked() {
          switch(SelectElement) {
             case Elements.Metal:
-                PopulateEquippedExilir(selectedExilir, MetalIcon, MetalBanner, MetalName, MetalDetail);
-                GameManager.EquipExilir(selectedExilir, Elements.Metal);
+                PopulateEquippedElixir(selectedElixir, MetalIcon, MetalBanner, MetalName, MetalDetail);
+                GameManager.EquipElixir(selectedElixir, Elements.Metal);
                 break;
             case Elements.Wood:
-                PopulateEquippedExilir(selectedExilir, WoodIcon, WoodBanner, WoodName, WoodDetail);
-                GameManager.EquipExilir(selectedExilir, Elements.Wood);
+                PopulateEquippedElixir(selectedElixir, WoodIcon, WoodBanner, WoodName, WoodDetail);
+                GameManager.EquipElixir(selectedElixir, Elements.Wood);
                 break;
             case Elements.Water:
-                PopulateEquippedExilir(selectedExilir, WaterIcon, WaterBanner, WaterName, WaterDetail);
-                GameManager.EquipExilir(selectedExilir, Elements.Water);
+                PopulateEquippedElixir(selectedElixir, WaterIcon, WaterBanner, WaterName, WaterDetail);
+                GameManager.EquipElixir(selectedElixir, Elements.Water);
                 break;
             case Elements.Fire:
-                PopulateEquippedExilir(selectedExilir, FireIcon, FireBanner, FireName, FireDetail);
-                GameManager.EquipExilir(selectedExilir, Elements.Fire);
+                PopulateEquippedElixir(selectedElixir, FireIcon, FireBanner, FireName, FireDetail);
+                GameManager.EquipElixir(selectedElixir, Elements.Fire);
                 break;
             case Elements.Earth:
-                PopulateEquippedExilir(selectedExilir, EarthIcon, EarthBanner, EarthName, EarthDetail);
-                GameManager.EquipExilir(selectedExilir, Elements.Earth);
+                PopulateEquippedElixir(selectedElixir, EarthIcon, EarthBanner, EarthName, EarthDetail);
+                GameManager.EquipElixir(selectedElixir, Elements.Earth);
                 break;
          }
          DetailPanel.SetActive(false);
          isDetailPenalOpen = false;
-         selectedExilir = null;
+         selectedElixir = null;
     }
 
     public void CancelButtonClicked() {
          DetailPanel.SetActive(false);
          isDetailPenalOpen = false;
-         selectedExilir = null;
+         selectedElixir = null;
     }
 
     // Update is called once per frame
