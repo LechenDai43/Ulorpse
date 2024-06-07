@@ -22,7 +22,7 @@ public class IconManager : MonoBehaviour
     public void ClickBodyButton() {
         MainPanel.SetActive(true);
         GameObject newItem = Instantiate(BodyPanelPrefab, MainPanel.transform);
-        newItem.GetComponent<ExilirPanelManager>().IconManager = this;
+        newItem.GetComponent<BodyPanelManager>().IconManager = this;
         GuordButton.interactable = false;
         BodyButton.interactable = false;
     }
@@ -30,6 +30,6 @@ public class IconManager : MonoBehaviour
     public void OpenedPanelIsClosing() {
         GuordButton.interactable = true;
         BodyButton.interactable = true;
-
+        MainPanel.SetActive(false);
     }
 }

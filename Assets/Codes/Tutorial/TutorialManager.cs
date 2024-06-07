@@ -123,6 +123,9 @@ public class TutorialManager : MonoBehaviour
             else if (variable.Contains("Special03")) {
                 entity.PostDialogueFunction = Special03PostDialogueFunction;
             }
+            else if (variable.Contains("Special04")) {
+                entity.PostDialogueFunction = Special04PostDialogueFunction;
+            }
             else {
                 entity.PostDialogueFunction = NormalPostDialogue;
             }
@@ -219,6 +222,13 @@ public class TutorialManager : MonoBehaviour
         Debug.Log(_dialoguePointer);
         MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = true;
         MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.onClick.AddListener(CloseExilirPanelToMoveOn);
+    }    
+
+    private void Special04PostDialogueFunction() {
+        _dialoguePointer++;
+        TutorialDialogueManager.ContinueButton.interactable = false;
+        BodyButton.interactable = true;
+        Debug.Log(_dialoguePointer);
     }
 
     public void OpenGourdToMoveOn() {
@@ -241,5 +251,12 @@ public class TutorialManager : MonoBehaviour
         }
         GourdButton.interactable = false;
         BodyButton.interactable = false;
+        MultiPurposePanel.SetActive(false);
+    }    
+
+    public void OpenBodyToMoveOn() {
+        if (_dialoguePointer == 14) {
+            TutorialDialogueManager.ContinueToNextLine();
+        }
     }
 }

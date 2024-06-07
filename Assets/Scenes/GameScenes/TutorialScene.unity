@@ -155,12 +155,18 @@ MonoBehaviour:
     LastName: 
     Level: 0
     Exilirs: []
+    MetalExilirID: 0
+    WoodExilirID: 0
+    WaterExilirID: 0
+    FireExilirID: 0
+    EarthExilirID: 0
     _FileName: 
+    _ExilirCounting: 0
     CharacterPortrait: {fileID: 0}
   locale: 0
   soundVolume: 100
-  musicVolume: 5
-  dialogueVolume: 5
+  musicVolume: 25
+  dialogueVolume: 25
   musicInterruptedOnSceneChanging: 0
   musicPausedAt: 0
   player: {fileID: 21300000, guid: 2fe2323c090076a438480929923d55d9, type: 3}
@@ -1392,6 +1398,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1512719093}
     m_Modifications:
+    - target: {fileID: 2864055804777132631, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864055804777132631, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864055804777132631, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1512719094}
+    - target: {fileID: 2864055804777132631, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864055804777132631, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OpenBodyToMoveOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864055804777132631, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TutorialManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864055804777132631, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3051496604750940280, guid: cb3f1ffb744c1c44aae56367dad6fdf6, type: 3}
       propertyPath: MainPanel
       value: 
