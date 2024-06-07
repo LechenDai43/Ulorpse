@@ -89,13 +89,18 @@ public class BodyPanelManager : MonoBehaviour, IExilirEntityList
     }
 
     private void PopulateEquippedExilir(Exilir exilir, Image icon, Image banner, Text name, Text description) {
+        Color emptyColor = new Color(1.0f,1.0f,1.0f,0.0f), fullColor = new Color(1.0f,1.0f,1.0f,1.0f);
+        icon.sprite = null;
+        icon.color = emptyColor;
         if (exilir.IsSpecialSprite) {
-            icon.sprite = exilir.SpecialSprite;
+            icon.gameObject.transform.parent.GetComponent<Image>().sprite = exilir.SpecialSprite;
         }
         else {    
             int elementIndex = (int)exilir.Element - 1;
-            icon.sprite = ExilirSprites[elementIndex];
+            icon.gameObject.transform.parent.GetComponent<Image>().sprite = ExilirSprites[elementIndex];
         }
+        
+        icon.gameObject.transform.parent.GetComponent<Image>().color = fullColor;
         int rarityIndex = (int)exilir.Rarity - 2;
         banner.sprite = BannerSprites[rarityIndex];
         name.text = exilir.GetLocalizedName();
