@@ -162,7 +162,6 @@ public class TutorialManager : MonoBehaviour
         if (paused) {
             return;
         }
-        Debug.Log(_dialoguePointer);
         _dialoguePointer++;
         TutorialDialogueManager.ContinueToNextLine();
     }
@@ -255,7 +254,6 @@ public class TutorialManager : MonoBehaviour
         _dialoguePointer++;
         paused = true;
         GourdButton.interactable = true;
-        Debug.Log(_dialoguePointer);
     }
 
     private void Special02PostDialogueFunction() {
@@ -273,7 +271,6 @@ public class TutorialManager : MonoBehaviour
         }
         
         MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = false;
-        Debug.Log(_dialoguePointer);
         Barrier.SetActive(false);
     }
 
@@ -283,7 +280,6 @@ public class TutorialManager : MonoBehaviour
         }
         _dialoguePointer++;
         paused = true;
-        Debug.Log(_dialoguePointer);
         MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = true;
         MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.onClick.AddListener(CloseExilirPanelToMoveOn);
         Barrier.SetActive(false);
@@ -296,7 +292,6 @@ public class TutorialManager : MonoBehaviour
         _dialoguePointer++;
         paused = true;
         BodyButton.interactable = true;
-        Debug.Log(_dialoguePointer);
     }     
 
     private void Special05PostDialogueFunction() {
@@ -312,7 +307,6 @@ public class TutorialManager : MonoBehaviour
         Button CloseButton = MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().CloseButton;
         CloseButton.onClick.AddListener(CloseBodyPanelToMoveOn);
         CloseButton.interactable = false;
-        Debug.Log(_dialoguePointer);
     }
 
     private void Special06PostDialogueFunction() {
@@ -323,7 +317,6 @@ public class TutorialManager : MonoBehaviour
         Barrier.SetActive(false);
         paused = true;
         MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().CloseButton.interactable = true;
-        Debug.Log(_dialoguePointer);
     }
 
     public void OpenGourdToMoveOn() {
