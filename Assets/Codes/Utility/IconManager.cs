@@ -8,7 +8,7 @@ using System;
 public class IconManager : MonoBehaviour
 {
     public Button GuordButton, BodyButton;
-    public GameObject ExilirListPanelPrefab;
+    public GameObject ExilirListPanelPrefab, BodyPanelPrefab;
     public GameObject MainPanel;
     // Start is called before the first frame update
     public void ClickGourdButton() {
@@ -20,7 +20,11 @@ public class IconManager : MonoBehaviour
     }
 
     public void ClickBodyButton() {
-
+        MainPanel.SetActive(true);
+        GameObject newItem = Instantiate(BodyPanelPrefab, MainPanel.transform);
+        newItem.GetComponent<ExilirPanelManager>().IconManager = this;
+        GuordButton.interactable = false;
+        BodyButton.interactable = false;
     }
 
     public void OpenedPanelIsClosing() {
