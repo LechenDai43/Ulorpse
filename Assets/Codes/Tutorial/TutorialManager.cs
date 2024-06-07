@@ -23,6 +23,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject MultiPurposePanel, Barrier;
 
     private int _dialoguePointer = 0;
+    public bool paused;
     // Start is called before the first frame update
     void Start()
     {
@@ -110,6 +111,21 @@ public class TutorialManager : MonoBehaviour
             else if (variable.Contains("Special02")) {
                 entity.PreDialogueFunction = Special02PreDialogueFunction;
             }
+            else if (variable.Contains("Line15")) {
+                entity.PreDialogueFunction = Line15PreDialogueFunction;
+            }
+            else if (variable.Contains("Line16")) {
+                entity.PreDialogueFunction = Line16PreDialogueFunction;
+            }
+            else if (variable.Contains("Line17")) {
+                entity.PreDialogueFunction = Line17PreDialogueFunction;
+            }
+            else if (variable.Contains("Line18")) {
+                entity.PreDialogueFunction = Line18PreDialogueFunction;
+            }
+            else if (variable.Contains("Line19")) {
+                entity.PreDialogueFunction = Line19PreDialogueFunction;
+            }
             else {
                 entity.PreDialogueFunction = NormalPreDialogue;
             }
@@ -126,6 +142,12 @@ public class TutorialManager : MonoBehaviour
             else if (variable.Contains("Special04")) {
                 entity.PostDialogueFunction = Special04PostDialogueFunction;
             }
+            else if (variable.Contains("Special05")) {
+                entity.PostDialogueFunction = Special05PostDialogueFunction;
+            }
+            else if (variable.Contains("Special06")) {
+                entity.PostDialogueFunction = Special06PostDialogueFunction;
+            }
             else {
                 entity.PostDialogueFunction = NormalPostDialogue;
             }
@@ -137,6 +159,9 @@ public class TutorialManager : MonoBehaviour
     }
 
     private void NormalPostDialogue() {
+        if (paused) {
+            return;
+        }
         Debug.Log(_dialoguePointer);
         _dialoguePointer++;
         TutorialDialogueManager.ContinueToNextLine();
@@ -182,12 +207,40 @@ public class TutorialManager : MonoBehaviour
         exilir.Level = 5;
         exilir.StatType = StatTypes.Attack;
         exilir.AdjustType = StatAdjustTypes.Value;
-        exilir.ID = 0;
+        exilir.ID = 1;
 
         GameManager.AddExilir(exilir);        
 
         Player.gameObject.SetActive(false);
         Exilir.gameObject.SetActive(true);
+    }    
+
+    private void Line15PreDialogueFunction() {
+        NormalPreDialogue();     
+        Exilir.gameObject.SetActive(false);
+    }
+
+    private void Line16PreDialogueFunction() {
+        NormalPreDialogue();     
+        Player.gameObject.SetActive(true);
+    }
+
+    private void Line17PreDialogueFunction() {
+        NormalPreDialogue();     
+        Player.gameObject.SetActive(false);
+        Opponent.gameObject.SetActive(true);
+    }
+
+    private void Line18PreDialogueFunction() {
+        NormalPreDialogue();     
+        Player.gameObject.SetActive(true);
+        Opponent.gameObject.SetActive(false);
+    }
+
+    private void Line19PreDialogueFunction() {
+        NormalPreDialogue();     
+        Player.gameObject.SetActive(false);
+        Opponent.gameObject.SetActive(true);
     }
 
     private void Special02PreDialogueFunction() {
@@ -196,15 +249,21 @@ public class TutorialManager : MonoBehaviour
     }
 
     private void Special01PostDialogueFunction() {
+        if (paused) {
+            return;
+        }
         _dialoguePointer++;
-        TutorialDialogueManager.ContinueButton.interactable = false;
+        paused = true;
         GourdButton.interactable = true;
         Debug.Log(_dialoguePointer);
     }
 
     private void Special02PostDialogueFunction() {
+        if (paused) {
+            return;
+        }
         _dialoguePointer++;
-        TutorialDialogueManager.ContinueButton.interactable = false;
+        paused = true;
         
         ExilirListEntity[] Entities = MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().Entities;
         foreach(ExilirListEntity entity in Entities) {
@@ -212,22 +271,58 @@ public class TutorialManager : MonoBehaviour
             button.interactable = true;
             button.onClick.AddListener(OpenExilirEntityToMoveOn);
         }
+        
+        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = false;
         Debug.Log(_dialoguePointer);
         Barrier.SetActive(false);
     }
 
     private void Special03PostDialogueFunction() {
+        if (paused) {
+            return;
+        }
         _dialoguePointer++;
-        TutorialDialogueManager.ContinueButton.interactable = false;
+        paused = true;
         Debug.Log(_dialoguePointer);
         MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = true;
         MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.onClick.AddListener(CloseExilirPanelToMoveOn);
+        Barrier.SetActive(false);
     }    
 
     private void Special04PostDialogueFunction() {
+        if (paused) {
+            return;
+        }
         _dialoguePointer++;
-        TutorialDialogueManager.ContinueButton.interactable = false;
+        paused = true;
         BodyButton.interactable = true;
+        Debug.Log(_dialoguePointer);
+    }     
+
+    private void Special05PostDialogueFunction() {
+        if (paused) {
+            return;
+        }
+        _dialoguePointer++;
+        TutorialDialogueManager.gameObject.SetActive(false);
+        Barrier.SetActive(false);
+        Button SelectExilirButton = MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().SelectButton;
+        SelectExilirButton.onClick.AddListener(EquipExilirToMoveOn);
+        paused = true;
+        Button CloseButton = MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().CloseButton;
+        CloseButton.onClick.AddListener(CloseBodyPanelToMoveOn);
+        CloseButton.interactable = false;
+        Debug.Log(_dialoguePointer);
+    }
+
+    private void Special06PostDialogueFunction() {
+        if (paused) {
+            return;
+        }
+        _dialoguePointer++;
+        Barrier.SetActive(false);
+        paused = true;
+        MultiPurposePanel.GetComponentInChildren<BodyPanelManager>().CloseButton.interactable = true;
         Debug.Log(_dialoguePointer);
     }
 
@@ -235,28 +330,52 @@ public class TutorialManager : MonoBehaviour
         if (_dialoguePointer == 12) {
             TutorialDialogueManager.ContinueToNextLine();
         }
+        paused = false;
     }
 
     public void OpenExilirEntityToMoveOn() {
         if (_dialoguePointer == 13) {
             TutorialDialogueManager.ContinueToNextLine();
+            paused = false;
+            Barrier.SetActive(true);
+            MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = false;
         }
-        Barrier.SetActive(false);
-        MultiPurposePanel.GetComponentInChildren<ExilirPanelManager>().CloseButton.interactable = false;
     }
     
     public void CloseExilirPanelToMoveOn() {
         if (_dialoguePointer == 14) {
             TutorialDialogueManager.ContinueToNextLine();
+            GourdButton.interactable = false;
+            BodyButton.interactable = false;
+            paused = false;
+            MultiPurposePanel.SetActive(false);
         }
-        GourdButton.interactable = false;
-        BodyButton.interactable = false;
-        MultiPurposePanel.SetActive(false);
     }    
 
     public void OpenBodyToMoveOn() {
-        if (_dialoguePointer == 14) {
+        if (_dialoguePointer == 15) {
             TutorialDialogueManager.ContinueToNextLine();
+            paused = false;
+            Barrier.SetActive(true);
         }
     }
+
+    public void EquipExilirToMoveOn() {
+        if (_dialoguePointer == 19) {
+            TutorialDialogueManager.gameObject.SetActive(true);
+            TutorialDialogueManager.ContinueToNextLine();
+            paused = false;
+            Barrier.SetActive(true);
+        }
+    }
+    
+    public void CloseBodyPanelToMoveOn() {
+        if (_dialoguePointer == 20) {
+            TutorialDialogueManager.ContinueToNextLine();
+            GourdButton.interactable = false;
+            BodyButton.interactable = false;
+            paused = false;
+            MultiPurposePanel.SetActive(false);
+        }
+    }   
 }

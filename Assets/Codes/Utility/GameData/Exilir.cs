@@ -36,11 +36,11 @@ public class Exilir: IEffect
 	}
 
 	public string GetLocalizedDescription() {
-		return "";
+		return "This is a Description";
 	}
 
 	public string GetLocalizedName() {
-		return "";
+		return Name;
 	}
 }
 
