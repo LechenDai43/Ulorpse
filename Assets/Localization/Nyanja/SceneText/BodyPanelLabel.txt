@@ -1,0 +1,2 @@
+equip:Sankhani|
+cancel:Kuletsa|

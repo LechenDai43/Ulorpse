@@ -163,10 +163,10 @@ MonoBehaviour:
     _FileName: 
     _ElixirCounting: 0
     CharacterPortrait: {fileID: 0}
-  locale: 0
+  locale: 2
   soundVolume: 100
   musicVolume: 25
-  dialogueVolume: 10
+  dialogueVolume: 25
   musicInterruptedOnSceneChanging: 0
   musicPausedAt: 0
   player: {fileID: 21300000, guid: 2fe2323c090076a438480929923d55d9, type: 3}
@@ -817,14 +817,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13eda70619f1b4f46b24fc4247ca6b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElixirImage: {fileID: 0}
-  Banner: {fileID: 0}
-  Elixir:
-    IsSpecialSprite: 0
-    SpecialSprite: {fileID: 0}
-  RarityBanners: []
-  ElementalSprites: []
-  IndexInList: 0
 --- !u!1 &1356144166
 GameObject:
   m_ObjectHideFlags: 0

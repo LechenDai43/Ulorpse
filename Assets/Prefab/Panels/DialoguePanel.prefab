@@ -467,6 +467,10 @@ MonoBehaviour:
   ContentText: {fileID: 7785046820355746773}
   ContinueButton: {fileID: 4189378146978209522}
   VoicePlayer: {fileID: 6075226041725272398}
+  TextFileCN: {fileID: 4900000, guid: cf6a33c6fcc123d49a31eb477533b8f0, type: 3}
+  TextFileEN: {fileID: 4900000, guid: 93b5aeee1ce13f644ab8918a55d1e8d8, type: 3}
+  TextFileJP: {fileID: 4900000, guid: d3b6e625d88c9f248b9b6e814142db73, type: 3}
+  TextFileNY: {fileID: 4900000, guid: 486672114377d0b41afec4c5a8644b72, type: 3}
 --- !u!114 &2940494040300713084
 MonoBehaviour:
   m_ObjectHideFlags: 0

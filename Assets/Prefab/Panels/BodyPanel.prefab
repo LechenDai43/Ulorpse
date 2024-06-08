@@ -2551,6 +2551,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 32c933d6c7ecc794a9dbed389f2daeef, type: 3}
   - {fileID: 4606157284126940538, guid: b55b019db8e0dd74aa88d78440901e8b, type: 3}
   IconManager: {fileID: 0}
+  TextFileCN: {fileID: 4900000, guid: aacd22f09b251c0469c81c467a837ed5, type: 3}
+  TextFileEN: {fileID: 4900000, guid: b25c6b07cb230c34f889fc2fe3b95f92, type: 3}
+  TextFileJP: {fileID: 4900000, guid: 1a1abc1726003c84aa05370b5669c39f, type: 3}
+  TextFileNY: {fileID: 4900000, guid: 97a8a721a50a44d46830f957c2f8687d, type: 3}
   Entities: []
 --- !u!1 &6935035950889258617
 GameObject:

@@ -23,6 +23,10 @@ public class BodyPanelManager : MonoBehaviour, IElixirEntityList
     EarthElixirs = new ArrayList(), targetElixirs;
     public Sprite[] ElixirSprites, BannerSprites, ElementSprites;
     public IconManager IconManager;
+
+    
+    public TextAsset TextFileCN, TextFileEN, TextFileJP, TextFileNY;
+    public Dictionary<string, string> Texts;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +89,24 @@ public class BodyPanelManager : MonoBehaviour, IElixirEntityList
         }
 
         // populate the title text
+        switch (GameManager.GetLocale())
+       {
+            case Locales.Chinese:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileCN);
+                break;
+            case Locales.English:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileEN);
+                break;
+            case Locales.Japanese:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileJP);
+                break;
+            case Locales.Chichewa:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileNY);
+                break;
+        }
+
+        SelectButton.gameObject.GetComponentInChildren<Text>().text = Texts["equip"];
+        CancelButton.gameObject.GetComponentInChildren<Text>().text = Texts["cancel"];
     }
 
     private void PopulateEquippedElixir(Elixir elixir, Image icon, Image banner, Text name, Text description) {

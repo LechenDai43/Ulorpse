@@ -202,7 +202,6 @@ public class TutorialManager : MonoBehaviour
             }
         }
         elixir.Rarity = Rarities.Rare;
-        elixir.Name = "An Elixir";
         elixir.Level = 5;
         elixir.StatType = StatTypes.Attack;
         elixir.AdjustType = StatAdjustTypes.Value;

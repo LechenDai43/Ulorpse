@@ -1,0 +1,2 @@
+equip:装备|
+cancel:取消|

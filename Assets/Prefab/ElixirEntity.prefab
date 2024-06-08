@@ -114,8 +114,8 @@ MonoBehaviour:
     SpecialSprite: {fileID: 0}
   RarityBanners:
   - {fileID: 21300000, guid: 69ca8a0c5a6f120408537bdf282c4bf4, type: 3}
+  - {fileID: 21300000, guid: 90a2c308286932c469123e960c24d4e4, type: 3}
   - {fileID: 21300000, guid: ad77c89c62531d74d8b5b73cd159f1e3, type: 3}
-  - {fileID: 0}
   - {fileID: 21300000, guid: ab05d56a7e11f1e4b92072fcac1916a3, type: 3}
   ElementalSprites:
   - {fileID: 21300000, guid: ffd5e25014ba71b4c91a0afd2515e25b, type: 3}

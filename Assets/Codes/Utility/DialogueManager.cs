@@ -15,9 +15,30 @@ public class DialogueManager : MonoBehaviour
     public Button ContinueButton;
     public AudioSource VoicePlayer;
     // Start is called before the first frame update
+    public TextAsset TextFileCN, TextFileEN, TextFileJP, TextFileNY;
+    public Dictionary<string, string> Texts;
     void Start()
     {
         VoicePlayer.volume = GameManager.GetDialogueVolume() / 100.0F;
+
+        
+        switch (GameManager.GetLocale())
+       {
+            case Locales.Chinese:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileCN);
+                break;
+            case Locales.English:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileEN);
+                break;
+            case Locales.Japanese:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileJP);
+                break;
+            case Locales.Chichewa:
+                Texts = LocaleStringParser.ParseLocaleFromTextAsset(TextFileNY);
+                break;
+        }
+
+        ContinueButton.gameObject.GetComponentInChildren<Text>().text = Texts["continue"];
     }
 
     // Update is called once per frame
