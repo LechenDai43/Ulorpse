@@ -116,6 +116,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void ContinueButtonClick() {    
+        if (currentFocus == null) {
+            return;
+        }
         currentFocus.PostDialogueFunction();
     }
 }
