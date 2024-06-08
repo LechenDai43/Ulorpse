@@ -43,7 +43,7 @@ public class TutorialManager : MonoBehaviour
                 break;
         }
 
-        Player.sprite = GameManager.GetCharacterPortrait();
+        GameManager.ResizeImageOnNewSprite(Player,GameManager. GetCharacterPortrait());
 
         if (GameManager.GetGender() == Genders.Male) {
             DubResources = MaleDubResources;

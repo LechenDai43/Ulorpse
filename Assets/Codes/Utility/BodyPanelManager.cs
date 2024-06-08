@@ -193,7 +193,7 @@ public class BodyPanelManager : MonoBehaviour, IElixirEntityList
        DetailName.text = entity.Elixir.GetLocalizedName();
        DetailDescription.text = entity.Elixir.GetLocalizedDescription();
        int elementIndex = (int)entity.Elixir.Element - 1;
-       DetailElement.sprite = ElementSprites[elementIndex];
+       GameManager.ResizeImageOnNewSprite(DetailElement,GameManager. ElementSprites[elementIndex]);
     }
 
     public void CloseButtonCliked() {

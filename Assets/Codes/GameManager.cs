@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -211,10 +211,10 @@ public class GameManager : MonoBehaviour
 
             #if UNITY_EDITOR
                 this.Character = new Saving();
-                Character.LastName = "Tao";
-                Character.FirstName = "Tianshuo";
+                Character.LastName = "陶";
+                Character.FirstName = "天烁";
                 Character.Gender = Genders.Male;
-                Character.Province = Provinces.Tranquil;
+                Character.Province = Provinces.Indulge;
                 Character.CharacterPortrait = player;
                 Character.Elixirs = new Elixir[0];
                 Character.Level = 1;
@@ -269,5 +269,19 @@ public class GameManager : MonoBehaviour
         }
         string JsonData = JsonUtility.ToJson(_instance.Character);
         File.WriteAllText(SaveFilePath, JsonData);
+    }
+
+    public static void ResizeImageOnNewSprite(Image _image, Sprite _sprite) {
+        _image.sprite = _sprite;
+        float newWidth, newHeight;
+        if (_sprite.rect.height > _sprite.rect.width) {
+            newWidth = (_image.rectTransform.rect.height * _sprite.rect.width) / _sprite.rect.height;
+            newHeight = _image.rectTransform.rect.height;
+        }
+        else{
+            newHeight = (_image.rectTransform.rect.width * _sprite.rect.height) / _sprite.rect.width;
+            newWidth = _image.rectTransform.rect.width;
+        }
+        _image.rectTransform.localScale = new Vector3(newWidth / _image.rectTransform.rect.width, newHeight / _image.rectTransform.rect.height, 1f);
     }
 }

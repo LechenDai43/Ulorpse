@@ -53,7 +53,7 @@ public class ElixirPanelManager : MonoBehaviour, IElixirEntityList
             Name.text = entity.Elixir.GetLocalizedName();
             Description.text = entity.Elixir.GetLocalizedDescription();
             int elementIndex = (int)entity.Elixir.Element - 1;
-            Element.sprite = Elements[elementIndex];
+            GameManager.ResizeImageOnNewSprite( Element, Elements[elementIndex]);
         }
     }
 
