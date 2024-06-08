@@ -1,0 +1,13 @@
+level:Level|
+attack:Attack|
+defense:Defense|
+health:HP|
+critical_damage:Critical Damage|
+critical_rate:Critical Rate|
+speed:Speed|
+rate:Percentage|
+value:Value|
+basic_attack:Basic Attack|
+skill:Skill|
+charged_attack:Charged Attack|
+blast_attack:Blast Attack|

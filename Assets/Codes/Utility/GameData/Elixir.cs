@@ -36,11 +36,39 @@ public class Elixir: IEffect
 	}
 
 	public string GetLocalizedDescription() {
-		return "This is a Description";
+		return BasicLocalizedDescription();
 	}
 
 	public string GetLocalizedName() {
+		if (!IsSpecialSprite) {
+			string standardName = "";
+			int index = ((int)Element - 1) * 4 + (int)Rarity - 2;
+			if (GameManager.NameLocaleManager != null) {
+				string key = GameManager.NameLocaleManager.CommonElixirNameVariableList[index];
+				return GameManager.NameLocaleManager.CommonElixirNames[key];
+			}
+		}
 		return Name;
+	}
+
+	public string BasicLocalizedDescription() {
+		string result = "";
+		string key;
+		int index;
+
+		// for Level
+		key = "level";
+		result += GameManager.NameLocaleManager.ElixirDescriptions[key];
+		result += ": " + Level.ToString() + "\r\n";
+
+		// for basic effect
+		index = (int)StatType;
+		key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[index];
+		result += GameManager.NameLocaleManager.ElixirDescriptions[key] + " ";
+		index = (int)AdjustType + 6;
+		key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[index];
+		result += GameManager.NameLocaleManager.ElixirDescriptions[key] + ": " + 1.ToString();
+		return result;
 	}
 }
 
@@ -132,18 +160,18 @@ public enum Rarities {
 
 [System.Serializable]
 public enum StatTypes {
-	Attack,
-	Defense,
-	Health,
-	CriticalDamage,
-	CriticalRate,
-	Speed
+	Attack = 1,
+	Defense = 2,
+	Health = 3,
+	CriticalDamage = 4,
+	CriticalRate = 5,
+	Speed = 6
 }
 
 [System.Serializable]
 public enum StatAdjustTypes {
-	Rate,
-	Value
+	Rate = 1,
+	Value = 2
 }
 
 [System.Serializable]

@@ -20,34 +20,43 @@ public class NameLocale : MonoBehaviour
     public List<string> CommonElixirNameVariableList = new List<string>();
     public TextAsset CommonElixirNameVariable;
 
+    public TextAsset ElixirDescriptionFileCN, ElixirDescriptionFileEN, ElixirDescriptionFileJP, ElixirDescriptionFileNY;
+    public Dictionary<string, string> ElixirDescriptions;    
+    public List<string> ElixirDescriptionVariableList = new List<string>();
+    public TextAsset ElixirDescriptionVariable;
+
      void Start()
     {
-        switch (GameManager.GetLocale())
-        {
-            case Locales.Chinese:
-                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileCN);
-                break;
-            case Locales.English:
-                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileEN);
-                break;
-            case Locales.Japanese:
-                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileJP);
-                break;
-            case Locales.Chichewa:
-                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileNY);
-                break;
-        }
-        
-        CommonElixirNameVariableList = LocaleStringParser.LoadLocalVariableNames(CommonElixirNameVariable);
-
-
         if (GameManager.NameLocaleManager == null)
         {
             GameManager.NameLocaleManager = this;
         }
         else
         {
-            Destroy(gameObject); // Ensures only one instance of GameManager exists
+            Destroy(gameObject);
+            return ;
         }
+        switch (GameManager.GetLocale())
+        {
+            case Locales.Chinese:
+                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileCN);
+                ElixirDescriptions = LocaleStringParser.ParseLocaleFromTextAsset(ElixirDescriptionFileCN);
+                break;
+            case Locales.English:
+                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileEN);
+                ElixirDescriptions = LocaleStringParser.ParseLocaleFromTextAsset(ElixirDescriptionFileEN);
+                break;
+            case Locales.Japanese:
+                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileJP);
+                ElixirDescriptions = LocaleStringParser.ParseLocaleFromTextAsset(ElixirDescriptionFileJP);
+                break;
+            case Locales.Chichewa:
+                CommonElixirNames = LocaleStringParser.ParseLocaleFromTextAsset(CommonElixirNameFileNY);
+                ElixirDescriptions = LocaleStringParser.ParseLocaleFromTextAsset(ElixirDescriptionFileNY);
+                break;
+        }
+        
+        CommonElixirNameVariableList = LocaleStringParser.LoadLocalVariableNames(CommonElixirNameVariable);
+        ElixirDescriptionVariableList = LocaleStringParser.LoadLocalVariableNames(ElixirDescriptionVariable);
     }
 }

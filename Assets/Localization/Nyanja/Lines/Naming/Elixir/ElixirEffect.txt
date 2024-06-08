@@ -1,0 +1,13 @@
+level:Mlingo|
+attack:Wowukira|
+defense:Chitetezo|
+health:HP|
+critical_damage:Kuukira Koopsa|
+critical_rate:Mwayi Koopsa|
+speed:Liwiro|
+rate:Peresenti|
+value:Mtengo|
+basic_attack:Kuukira Masiko|
+skill:Kuukira Wapadera|
+charged_attack:Kuukira Zolemetsa|
+blast_attack:Kuukira Kuphulitsa|

@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour
                 Character.Province = Provinces.Tranquil;
                 Character.CharacterPortrait = player;
                 Character.Elixirs = new Elixir[0];
+                Character.Level = 1;
             #endif
         }
         else

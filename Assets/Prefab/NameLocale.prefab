@@ -50,3 +50,9 @@ MonoBehaviour:
   CommonElixirNameFileNY: {fileID: 4900000, guid: d759e9731dd62b54a8e38c5e1da02220, type: 3}
   CommonElixirNameVariableList: []
   CommonElixirNameVariable: {fileID: 4900000, guid: 0eaae77a07d28684fa069da7ef5ca5aa, type: 3}
+  ElixirDescriptionFileCN: {fileID: 4900000, guid: ee43349212cd966448d9e45e3bffeffd, type: 3}
+  ElixirDescriptionFileEN: {fileID: 4900000, guid: ca2ab37ee923f4a4ca84319cd3ba04eb, type: 3}
+  ElixirDescriptionFileJP: {fileID: 4900000, guid: 367940df440880f42863f028ea6fe359, type: 3}
+  ElixirDescriptionFileNY: {fileID: 4900000, guid: 702e8a676712be44c86ae51721d9bea5, type: 3}
+  ElixirDescriptionVariableList: []
+  ElixirDescriptionVariable: {fileID: 4900000, guid: 847414bda5006e84b8821e0e9f2a15a5, type: 3}

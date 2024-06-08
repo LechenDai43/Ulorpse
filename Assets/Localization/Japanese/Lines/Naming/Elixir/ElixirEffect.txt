@@ -1,0 +1,13 @@
+level:レベル|
+attack:攻撃|
+defense:防御|
+health:体力|
+critical_damage:暴撃ダメージ|
+critical_rate:暴撃率|
+speed:速度|
+rate:割合|
+value:数値|
+basic_attack:基本攻撃|
+skill:スキル|
+charged_attack:溜め攻撃|
+blast_attack:爆発攻撃|

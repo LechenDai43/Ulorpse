@@ -50,8 +50,8 @@ public class ElixirPanelManager : MonoBehaviour, IElixirEntityList
             ElixirListEntity entity = Entities[index];
             Enlargement.sprite = entity.ElixirImage.sprite;
             Banner.sprite = entity.Banner.sprite;
-            Name.text = entity.Elixir.Name;
-            Description.text = entity.Elixir.Description;
+            Name.text = entity.Elixir.GetLocalizedName();
+            Description.text = entity.Elixir.GetLocalizedDescription();
             int elementIndex = (int)entity.Elixir.Element - 1;
             Element.sprite = Elements[elementIndex];
         }

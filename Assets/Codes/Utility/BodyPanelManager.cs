@@ -9,7 +9,6 @@ public class BodyPanelManager : MonoBehaviour, IElixirEntityList
 {
     public Image MetalIcon, WoodIcon, WaterIcon, FireIcon, EarthIcon;
     public Image MetalBanner, WoodBanner, WaterBanner, FireBanner, EarthBanner;
-    public Text MetalTitle, WoodTitle, WaterTitle, FireTitle, EarthTitle;
     public Text MetalName, WoodName, WaterName, FireName, EarthName;
     public Text MetalDetail, WoodDetail, WaterDetail, FireDetail, EarthDetail;
     public ScrollRect ListOfElixirs;

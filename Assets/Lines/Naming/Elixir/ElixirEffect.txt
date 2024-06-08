@@ -1,0 +1,13 @@
+level
+attack
+defense
+health
+critical_damage
+critical_rate
+speed
+rate
+value
+basic_attack
+skill
+charged_attack
+blast_attack
