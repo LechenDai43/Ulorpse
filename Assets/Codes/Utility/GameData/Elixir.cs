@@ -67,7 +67,40 @@ public class Elixir: IEffect
 		result += GameManager.NameLocaleManager.ElixirDescriptions[key] + " ";
 		index = (int)AdjustType + 6;
 		key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[index];
-		result += GameManager.NameLocaleManager.ElixirDescriptions[key] + ": " + 1.ToString();
+		float value = GetValue() * (AdjustType == StatAdjustTypes.Value? 1: 100);
+		result += GameManager.NameLocaleManager.ElixirDescriptions[key] + ": +" + ((int)value).ToString() + (AdjustType == StatAdjustTypes.Value? "": "%");
+		return result;
+	}
+
+	public float GetValue() {
+		float baseF, incrementF;
+		int rowIndex = AdjustType == StatAdjustTypes.Value? 0: 1;
+		switch (StatType) {
+			case StatTypes.Attack:
+				rowIndex += 2;
+				break;
+			case StatTypes.Defense:
+				rowIndex += 0;				
+				break;
+			case StatTypes.Health:
+				rowIndex += 4;				
+				break;
+			case StatTypes.Speed:
+				rowIndex += 6;				
+				break;
+		}
+		baseF = ExilirNumber.BaseValues[rowIndex,(int)Rarity - 2];
+		incrementF = ExilirNumber.IncrementValues[rowIndex,(int)Rarity - 2];
+
+		if (StatType == StatTypes.CriticalDamage) {
+			baseF = ExilirNumber.BaseValues[9,(int)Rarity - 2];
+			incrementF = ExilirNumber.IncrementValues[9,(int)Rarity - 2];
+		} else if (StatType == StatTypes.CriticalRate) {
+			baseF = ExilirNumber.BaseValues[8,(int)Rarity - 2];
+			incrementF = ExilirNumber.IncrementValues[8,(int)Rarity - 2];
+		}
+
+		float result = baseF + (incrementF * (Level - 1));
 		return result;
 	}
 }
@@ -222,4 +255,45 @@ public class ElixirComparer: IComparer
 			return (int)elixirY.Rarity - (int)elixirX.Rarity;
 		}
 	}
+}
+
+public class ExilirNumber {
+	public static float[,] BaseValues = new float[10, 4]
+	{
+		// Defense Values
+		{16f, 26f, 37f, 45f},
+		{0.034f, 0.051f, 0.069f, 0.086f},
+		// Attack Values
+		{21f, 33f, 45f, 56f},
+		{0.027f, 0.041f, 0.055f, 0.069f},
+		// Health Values
+		{39f, 67f, 90f, 112f},
+		{0.027f, 0.041f, 0.055f, 0.069f},
+		// Speed Values
+		{1f, 2f, 3f, 4f},
+		{0.034f, 0.051f, 0.069f, 0.086f},
+		// Critical Damage Rate Values
+		{0.017f, 0.027f, 0.041f, 0.051f},
+		{0.044f, 0.062f, 0.082f, 0.103f},
+	};
+	
+	public static float[,] IncrementValues = new float[10, 4]
+	{
+		// Defense Values
+		{4f, 8f, 14f, 16f},
+		{0.01f, 0.015f, 0.026f, 0.032f},
+		// Attack Values
+		{5f, 10f, 17f, 20f},
+		{0.009f, 0.012f, 0.021f, 0.033f},
+		// Health Values
+		{13f, 19f, 34f, 42f},
+		{0.009f, 0.012f, 0.021f, 0.033f},
+		// Speed Values
+		{0.6f, 0.8f, 1.2f, 1.8f},
+		{0.01f, 0.015f, 0.026f, 0.041f},
+		// Critical Damage Rate Values
+		{0.006f, 0.011f, 0.016f, 0.025f},
+		{0.013f, 0.018f, 0.032f, 0.05f},
+	};
+
 }
