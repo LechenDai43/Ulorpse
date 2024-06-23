@@ -11,3 +11,10 @@ basic_attack:基本攻撃|
 skill:スキル|
 charged_attack:溜め攻撃|
 blast_attack:爆発攻撃|
+elemental_change_basic_question: 通常攻撃が{%element%}攻撃になります |
+elemental_change_skill: 戦闘スキルは{%element%}の攻撃になります |
+metal_element:金属性|
+wood_element:木属性|
+water_element:水属性|
+fire_element:火属性|
+earth_element:土属性|

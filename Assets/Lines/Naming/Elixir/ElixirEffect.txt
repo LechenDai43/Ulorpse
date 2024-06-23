@@ -11,3 +11,10 @@ basic_attack
 skill
 charged_attack
 blast_attack
+elemental_change_basic_attack
+elemental_change_skill
+metal_element
+wood_element
+water_element
+fire_element
+earth_element

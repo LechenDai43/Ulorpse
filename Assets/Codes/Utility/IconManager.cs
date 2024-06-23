@@ -7,7 +7,7 @@ using System;
 
 public class IconManager : MonoBehaviour
 {
-    public Button GuordButton, BodyButton;
+    public Button GuordButton, BodyButton, MapButton;
     public GameObject ElixirListPanelPrefab, BodyPanelPrefab;
     public GameObject MainPanel;
     // Start is called before the first frame update
@@ -31,5 +31,9 @@ public class IconManager : MonoBehaviour
         GuordButton.interactable = true;
         BodyButton.interactable = true;
         MainPanel.SetActive(false);
+    }
+
+    public void ClickMapButton() {
+
     }
 }

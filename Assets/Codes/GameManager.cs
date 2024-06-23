@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour
                 Character.LastName = "陶";
                 Character.FirstName = "天烁";
                 Character.Gender = Genders.Male;
-                Character.Province = Provinces.Indulge;
+                Character.Province = Provinces.Tranquil;
                 Character.CharacterPortrait = player;
                 Character.Elixirs = new Elixir[0];
                 Character.Level = 1;
@@ -269,6 +269,7 @@ public class GameManager : MonoBehaviour
         }
         string JsonData = JsonUtility.ToJson(_instance.Character);
         File.WriteAllText(SaveFilePath, JsonData);
+        Debug.Log(SaveFilePath);
     }
 
     public static void ResizeImageOnNewSprite(Image _image, Sprite _sprite) {

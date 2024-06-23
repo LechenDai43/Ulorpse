@@ -11,3 +11,10 @@ basic_attack:Basic Attack|
 skill:Skill|
 charged_attack:Charged Attack|
 blast_attack:Blast Attack|
+elemental_change_basic_attack:Your basic attack will change to {%element%} elemental attack.|
+elemental_change_skill:Your skill will change to {%element%} elemental attack.|
+metal_element:metal|
+wood_element:wood|
+water_element:water|
+fire_element:fire|
+earth_element:earth|

@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gourdShortcut_0: 8363946303193345436
+      gourdShortcut_1: -2542043980134418719
+      gourdShortcut_2: 8352090702300955023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

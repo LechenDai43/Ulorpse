@@ -19,7 +19,7 @@ public class TutorialManager : MonoBehaviour
     public DialogueManager TutorialDialogueManager;
     public Image Player, Elixir, Opponent;
     public Sprite[] Elixirs, Opponents;
-    public Button GourdButton, BodyButton;
+    public Button GourdButton, BodyButton, MapButton;
     public GameObject MultiPurposePanel, Barrier;
 
     private int _dialoguePointer = 0;
@@ -86,6 +86,7 @@ public class TutorialManager : MonoBehaviour
         TutorialDialogueManager.ContinueToNextLine();
         GourdButton.interactable = false;
         BodyButton.interactable = false;
+        MapButton.interactable = false;
         
     }
 
@@ -174,7 +175,7 @@ public class TutorialManager : MonoBehaviour
         NormalPreDialogue();
 
         // Create the initial Elixir
-        Elixir elixir = new Elixir();
+        ElementalElixir elixir = new ElementalElixir();
         if (GameManager.GetGender() == Genders.Male) {
             switch(GameManager.GetProvince()) {
                 case Provinces.Azure:
@@ -206,6 +207,7 @@ public class TutorialManager : MonoBehaviour
         elixir.StatType = StatTypes.Attack;
         elixir.AdjustType = StatAdjustTypes.Value;
         elixir.ID = 1;
+        elixir.AttackType = AttackTypes.Skill;
 
         GameManager.AddElixir(elixir);        
 

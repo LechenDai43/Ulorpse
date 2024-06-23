@@ -11,3 +11,10 @@ basic_attack:Kuukira Masiko|
 skill:Kuukira Wapadera|
 charged_attack:Kuukira Zolemetsa|
 blast_attack:Kuukira Kuphulitsa|
+elemental_change_basic_attack:Kuukira masiko kudzasintha kukhala kuukira {%element%}.|
+elemental_change_skill: Kuukira wapadera kudzasintha kukhala kuukira {%element%}.|
+metal_element:chitsulo|
+wood_element:mtengo|
+water_element:madzi|
+fire_element:moto|
+earth_element:nthaka|

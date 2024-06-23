@@ -11,3 +11,10 @@ basic_attack:普通攻击|
 skill:战技|
 charged_attack:蓄力攻击|
 blast_attack:扩散攻击|
+elemental_change_basic_attack:普通攻击将会变成{%element%}攻击|
+elemental_change_skill:战技将会变成{%element%}攻击|
+metal_element:金元素|
+wood_element:木元素|
+water_element:水元素|
+fire_element:火元素|
+earth_element:土元素|

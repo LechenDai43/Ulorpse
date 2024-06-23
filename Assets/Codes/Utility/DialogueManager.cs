@@ -109,10 +109,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    bool canContinue = false;
     public void SkipDialogueLine() {
-        dialogueSkipped = true;
-        VoicePlayer.Stop();
-        ContinueButton.interactable = true;
+        if (canContinue) {
+            canContinue = false;
+            ContinueButtonClick();
+        }
+        else {
+            canContinue = true;
+            dialogueSkipped = true;
+            VoicePlayer.Stop();
+            ContinueButton.interactable = true;
+        }
+
     }
 
     public void ContinueButtonClick() {    

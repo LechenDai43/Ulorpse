@@ -27,7 +27,7 @@ public class Elixir: IEffect
     public Sprite SpecialSprite;
 	
 
-	public void ApplyEffect(IFightable fighter) {
+	public virtual void ApplyEffect(IFightable fighter) {
 		PrimaryStatAdjustment(fighter);
 	}
 
@@ -35,7 +35,7 @@ public class Elixir: IEffect
 		// to apply stat adjustment
 	}
 
-	public string GetLocalizedDescription() {
+	public virtual string GetLocalizedDescription() {
 		return BasicLocalizedDescription();
 	}
 
@@ -111,10 +111,43 @@ public class ElementalElixir: Elixir
 	[SerializeField]
 	public AttackTypes AttackType {get; set;}
 
-	public void ApplyEffect(IFightable fighter) {
+	public override void ApplyEffect(IFightable fighter) {
 		PrimaryStatAdjustment(fighter);
 		
 		// to apply elemental adjustment
+	}
+
+	public override string GetLocalizedDescription() {
+		string result =  BasicLocalizedDescription();
+		string key;
+		if (AttackType == AttackTypes.BasicAttack) {
+			key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[13];
+		}
+		else {
+			key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[14];
+		}
+		string newLine = GameManager.NameLocaleManager.ElixirDescriptions[key];
+		key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[15];
+		switch (Element) {
+			case Elements.Metal:
+				key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[15];
+				break;
+			case Elements.Wood:
+				key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[16];
+				break;
+			case Elements.Water:
+				key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[17];
+				break;
+			case Elements.Fire:
+				key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[18];
+				break;
+			case Elements.Earth:
+				key = GameManager.NameLocaleManager.ElixirDescriptionVariableList[19];
+				break;
+		}
+		newLine = newLine.Replace("{%element%}", GameManager.NameLocaleManager.ElixirDescriptions[key]);
+		result += newLine;
+		return result;
 	}
 }
 
@@ -127,10 +160,14 @@ public class DoubleElixir: Elixir
 	public StatAdjustTypes SecondaryAdjustType {get; set;}
 
 	
-	public void ApplyEffect(IFightable fighter) {
+	public override void ApplyEffect(IFightable fighter) {
 		PrimaryStatAdjustment(fighter);
 		
 		// to apply secondary stat adjustment
+	}
+
+	public override string GetLocalizedDescription() {
+		return BasicLocalizedDescription();
 	}
 }
 
@@ -140,10 +177,14 @@ public class AttackElixir: Elixir
 	[SerializeField]
 	public AttackModes AttackMode {get; set;}
 
-	public void ApplyEffect(IFightable fighter) {
+	public override void ApplyEffect(IFightable fighter) {
 		PrimaryStatAdjustment(fighter);
 		
 		// to apply attak mode adjustment
+	}	
+
+	public override string GetLocalizedDescription() {
+		return BasicLocalizedDescription();
 	}
 }
 
@@ -153,10 +194,14 @@ public class SurvivalElixir: Elixir
 	[SerializeField]
 	public SurvivalSkills SurvivalSkill {get; set;}
 
-	public void ApplyEffect(IFightable fighter) {
+	public override void ApplyEffect(IFightable fighter) {
 		PrimaryStatAdjustment(fighter);
 		
 		// to apply attak mode adjustment
+	}
+
+	public override string GetLocalizedDescription() {
+		return BasicLocalizedDescription();
 	}
 }
 
@@ -166,10 +211,14 @@ public class EnhanceElixir: Elixir
 	[SerializeField]
 	public EnhanceSkills EnhanceSkill {get; set;}
 
-	public void ApplyEffect(IFightable fighter) {
+	public override void ApplyEffect(IFightable fighter) {
 		PrimaryStatAdjustment(fighter);
 		
 		// to apply attak mode adjustment
+	}
+
+	public override string GetLocalizedDescription() {
+		return BasicLocalizedDescription();
 	}
 }
 
